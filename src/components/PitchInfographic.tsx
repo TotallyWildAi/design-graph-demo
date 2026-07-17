@@ -68,6 +68,11 @@ export function PitchInfographic() {
       {open && (
         <div
           className="ig-overlay"
+          // Inline because the CSS build pipeline strips backdrop-filter.
+          style={{
+            backdropFilter: "blur(10px) saturate(0.85)",
+            WebkitBackdropFilter: "blur(10px) saturate(0.85)",
+          }}
           onClick={(e) => {
             if (e.target === e.currentTarget) setOpen(false);
           }}
