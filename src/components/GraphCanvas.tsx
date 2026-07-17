@@ -2,7 +2,7 @@
 
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
-  ReactFlow, Background, Controls,
+  ReactFlow, Background, Controls, Panel,
   type Edge as RFEdge, type Node as RFNode, MarkerType,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
@@ -229,6 +229,26 @@ export function GraphCanvas({ data, idx, filters, selectedId, spotlightId, onSel
     >
       <Background gap={22} size={1} color="var(--canvas-dot)" />
       <Controls showInteractive={false} />
+      <Panel position="top-left" className="flex gap-1">
+        <button
+          onClick={() => setCollapsed(new Set())}
+          disabled={collapsed.size === 0}
+          className="text-[10px] px-2 py-1 rounded-md border border-[var(--border)] bg-[var(--panel-bg)] text-[var(--text-soft)] shadow-sm hover:border-[var(--iris)] hover:text-[var(--iris)] disabled:opacity-40 disabled:hover:border-[var(--border)] disabled:hover:text-[var(--text-soft)]"
+          title="Expand every collapsed subtree"
+        >
+          ⊞ Expand all
+        </button>
+        <button
+          onClick={() => setCollapsed(defaultCollapsed())}
+          className="text-[10px] px-2 py-1 rounded-md border border-[var(--border)] bg-[var(--panel-bg)] text-[var(--text-soft)] shadow-sm hover:border-[var(--iris)] hover:text-[var(--iris)]"
+          title="Collapse containers back to the C4 overview"
+        >
+          ⊟ Overview
+        </button>
+        <span className="text-[9.5px] text-[var(--muted)] self-center pl-1">
+          double-click a card to expand / collapse it
+        </span>
+      </Panel>
     </ReactFlow>
   );
 }
