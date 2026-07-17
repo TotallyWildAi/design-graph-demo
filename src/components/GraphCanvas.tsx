@@ -48,8 +48,14 @@ export function GraphCanvas({ data, idx, filters, selectedId, spotlightId, onSel
   }, []);
 
   // Double-click expand/collapse of CONTAINS subtrees, as in the product.
-  const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
-  useEffect(() => setCollapsed(new Set()), [data]);
+  // Containers start collapsed so the canvas opens as a C4 level-1 overview —
+  // double-click a container to dive into it.
+  const defaultCollapsed = useCallback(
+    () => new Set(data.nodes.filter((n) => n.kind === "CONTAINER").map((n) => n.id)),
+    [data],
+  );
+  const [collapsed, setCollapsed] = useState<Set<string>>(defaultCollapsed);
+  useEffect(() => setCollapsed(defaultCollapsed()), [defaultCollapsed]);
 
   const containsChildren = useCallback(
     (id: string) => (idx.out.get(id) ?? []).filter((e) => e.kind === "CONTAINS").map((e) => e.dst),
