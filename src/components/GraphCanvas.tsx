@@ -6,8 +6,8 @@ import {
   type Edge as RFEdge, type Node as RFNode, MarkerType,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
-import type { DGData, DGNode } from "@/lib/types";
-import { type FilterState, type GraphIndex, visibleEdges, visibleNodes } from "@/lib/graph";
+import type { DGData, DGEdge, DGNode } from "@/lib/types";
+import { type FilterState, type GraphIndex, visibleNodes } from "@/lib/graph";
 import { layout } from "@/lib/layout";
 import { edgeColor, edgePhrase } from "@/lib/style";
 import { DigNode } from "./DigNode";
@@ -47,14 +47,76 @@ export function GraphCanvas({ data, idx, filters, selectedId, spotlightId, onSel
     if (leaveTimer.current) clearTimeout(leaveTimer.current);
   }, []);
 
-  // Layout is independent of selection/hover — computed once per filter change.
-  const { vis, edges, pos } = useMemo(() => {
-    const vis = visibleNodes(data, idx, filters);
+  // Double-click expand/collapse of CONTAINS subtrees, as in the product.
+  const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
+  useEffect(() => setCollapsed(new Set()), [data]);
+
+  const containsChildren = useCallback(
+    (id: string) => (idx.out.get(id) ?? []).filter((e) => e.kind === "CONTAINS").map((e) => e.dst),
+    [idx],
+  );
+  const toggleCollapse = useCallback((id: string) => {
+    if (containsChildren(id).length === 0) return;
+    setCollapsed((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  }, [containsChildren]);
+
+  // Layout is independent of selection/hover — computed per filter/collapse change.
+  const { vis, edges, pos, hiddenCounts } = useMemo(() => {
+    const filtered = visibleNodes(data, idx, filters);
+    const filteredIds = new Set(filtered.map((n) => n.id));
+
+    // Hide every CONTAINS-descendant of a collapsed (and itself visible) node.
+    const hidden = new Set<string>();
+    const hiddenCounts = new Map<string, number>();
+    for (const rootId of collapsed) {
+      if (!filteredIds.has(rootId) || hidden.has(rootId)) continue;
+      let count = 0;
+      const stack = [...containsChildren(rootId)];
+      const seen = new Set<string>();
+      while (stack.length) {
+        const cur = stack.pop()!;
+        if (seen.has(cur)) continue;
+        seen.add(cur);
+        hidden.add(cur);
+        if (filteredIds.has(cur)) count++;
+        stack.push(...containsChildren(cur));
+      }
+      hiddenCounts.set(rootId, count);
+    }
+    const vis = filtered.filter((n) => !hidden.has(n.id));
     const visSet = new Set(vis.map((n) => n.id));
-    const edges = visibleEdges(data, visSet);
+
+    // Re-route edges whose endpoint is hidden to its nearest visible
+    // CONTAINS-ancestor (the collapsed card), so the graph stays connected.
+    const repFor = (id: string): string | null => {
+      let cur: string | undefined = id;
+      const guard = new Set<string>();
+      while (cur && !guard.has(cur)) {
+        if (visSet.has(cur)) return cur;
+        guard.add(cur);
+        cur = (idx.in.get(cur) ?? []).find((e) => e.kind === "CONTAINS")?.src;
+      }
+      return null;
+    };
+    const seenEdge = new Set<string>();
+    const edges: DGEdge[] = [];
+    for (const e of data.edges) {
+      const src = repFor(e.src);
+      const dst = repFor(e.dst);
+      if (!src || !dst || src === dst) continue;
+      const key = `${src}>${dst}:${e.kind}`;
+      if (seenEdge.has(key)) continue;
+      seenEdge.add(key);
+      edges.push(src === e.src && dst === e.dst ? e : { ...e, src, dst });
+    }
     const pos = layout(vis, edges);
-    return { vis, edges, pos };
-  }, [data, idx, filters]);
+    return { vis, edges, pos, hiddenCounts };
+  }, [data, idx, filters, collapsed, containsChildren]);
 
   // Decoration (spotlight on click, highlight on hover). Node/edge objects are
   // reused from the previous pass when their decoration didn't change, so React
@@ -80,11 +142,13 @@ export function GraphCanvas({ data, idx, filters, selectedId, spotlightId, onSel
       const y = p?.y ?? 0;
       const selected = n.id === selectedId;
       const dimmed = focus !== null && !incident.has(n.id);
+      const hiddenChildren = hiddenCounts.get(n.id) ?? 0;
       const prev = prevNodes.current.get(n.id);
-      const pd = prev?.data as { node: DGNode; selected: boolean; dimmed: boolean; dimLevel: number } | undefined;
+      const pd = prev?.data as { node: DGNode; selected: boolean; dimmed: boolean; dimLevel: number; hiddenChildren: number } | undefined;
       if (
         prev && pd && pd.node === n && pd.selected === selected && pd.dimmed === dimmed &&
-        pd.dimLevel === dimLevel && prev.position.x === x && prev.position.y === y
+        pd.dimLevel === dimLevel && pd.hiddenChildren === hiddenChildren &&
+        prev.position.x === x && prev.position.y === y
       ) {
         nextNodes.set(n.id, prev);
         return prev;
@@ -93,7 +157,7 @@ export function GraphCanvas({ data, idx, filters, selectedId, spotlightId, onSel
         id: n.id,
         type: "dig",
         position: { x, y },
-        data: { node: n, selected, dimmed, dimLevel },
+        data: { node: n, selected, dimmed, dimLevel, hiddenChildren },
       };
       nextNodes.set(n.id, created);
       return created;
@@ -137,7 +201,7 @@ export function GraphCanvas({ data, idx, filters, selectedId, spotlightId, onSel
     prevEdges.current = nextEdges;
 
     return { rfNodes, rfEdges };
-  }, [vis, edges, pos, selectedId, spotlightId, hoverId]);
+  }, [vis, edges, pos, hiddenCounts, selectedId, spotlightId, hoverId]);
 
   return (
     <ReactFlow
@@ -145,9 +209,11 @@ export function GraphCanvas({ data, idx, filters, selectedId, spotlightId, onSel
       edges={rfEdges}
       nodeTypes={nodeTypes}
       onNodeClick={(_, n) => onSelect(n.id)}
+      onNodeDoubleClick={(_, n) => toggleCollapse(n.id)}
       onPaneClick={() => onSelect(null)}
       onNodeMouseEnter={(_, n) => hoverEnter(n.id)}
       onNodeMouseLeave={hoverLeave}
+      zoomOnDoubleClick={false}
       fitView
       minZoom={0.08}
       proOptions={{ hideAttribution: true }}

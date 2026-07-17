@@ -5,7 +5,7 @@ import { styleForNode, tint } from "@/lib/style";
 import type { DGNode } from "@/lib/types";
 
 export type DigNodeType = Node<
-  { node: DGNode; dimmed: boolean; selected: boolean; dimLevel?: number },
+  { node: DGNode; dimmed: boolean; selected: boolean; dimLevel?: number; hiddenChildren?: number },
   "dig"
 >;
 
@@ -32,6 +32,15 @@ export function DigNode({ data }: NodeProps<DigNodeType>) {
       <div className="flex items-center gap-1.5 min-w-0">
         <span className="text-[13px] leading-none shrink-0">{s.icon}</span>
         <span className="text-[11px] font-semibold truncate" title={n.name}>{n.name}</span>
+        {(data.hiddenChildren ?? 0) > 0 && (
+          <span
+            className="ml-auto shrink-0 text-[9px] font-bold px-1 rounded"
+            style={{ color: s.color, background: tint(s.color, 0.18) }}
+            title="Collapsed — double-click to expand"
+          >
+            +{data.hiddenChildren}
+          </span>
+        )}
       </div>
       <div className="text-[8px] tracking-wide mt-0.5 font-medium" style={{ color: s.color }}>
         {tag}
