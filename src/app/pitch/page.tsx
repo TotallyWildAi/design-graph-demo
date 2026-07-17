@@ -55,6 +55,101 @@ const UNLOCKS = [
   },
 ];
 
+/** Pipeline infographic — stages styled like the demo's graph cards. */
+const STAGES: Array<{ icon: string; name: string; sub: string; color: string; note: string }> = [
+  { icon: "👤", name: "Human brief", sub: "goals · decisions", color: "#64748b", note: "captured by" },
+  { icon: "🤖", name: "BA agent", sub: "the intent", color: "#a855f7", note: "feeds" },
+  { icon: "🏛️", name: "Architect", sub: "proposes the graph", color: "#8b5cf6", note: "through the" },
+  { icon: "🛡️", name: "Verification gate", sub: "hard assertions — rejects contradictions", color: "#dc2626", note: "locks" },
+];
+
+function Infographic() {
+  return (
+    <div className="mt-6 rounded-2xl border border-[var(--border)] bg-[var(--panel-bg)] p-5 sm:p-7">
+      {/* stage row */}
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+        {STAGES.map((s) => (
+          <div key={s.name} className="flex flex-col sm:flex-row items-center gap-2 sm:flex-1">
+            <div
+              className="w-full rounded-lg border px-3 py-2 text-center"
+              style={{
+                borderColor: s.color,
+                background: `color-mix(in srgb, ${s.color} 10%, var(--panel-bg))`,
+              }}
+            >
+              <div className="text-[16px] leading-none">{s.icon}</div>
+              <div className="mt-1 text-[12px] font-bold leading-tight">{s.name}</div>
+              <div className="text-[9.5px] text-[var(--muted)] leading-tight">{s.sub}</div>
+            </div>
+            <div className="shrink-0 text-[var(--muted)] text-[10px] flex sm:flex-col items-center gap-0.5">
+              <span className="hidden sm:block text-[14px] leading-none">→</span>
+              <span className="sm:hidden text-[14px] leading-none">↓</span>
+              <span className="whitespace-nowrap">{s.note}</span>
+            </div>
+          </div>
+        ))}
+        {/* the graph — centrepiece */}
+        <div
+          className="rounded-xl border-2 px-4 py-3 text-center sm:min-w-[190px]"
+          style={{
+            borderColor: "var(--iris)",
+            background: "color-mix(in srgb, #6e5ccc 14%, var(--panel-bg))",
+            boxShadow: "0 4px 18px rgba(110,92,204,.25)",
+          }}
+        >
+          <div className="text-[18px] leading-none">🕸️</div>
+          <div className="mt-1 text-[13.5px] font-black leading-tight text-[var(--iris)]">
+            THE VERIFIED GRAPH
+          </div>
+          <div className="mt-0.5 text-[9.5px] text-[var(--text-soft)] leading-snug">
+            typed · mechanically proven · the source of truth
+          </div>
+          <div className="mt-1.5 inline-block rounded-full border border-[var(--iris)] px-2 py-0.5 text-[8.5px] font-bold text-[var(--iris)] tracking-wide">
+            typed graphAPI
+          </div>
+        </div>
+      </div>
+
+      {/* fan-out row */}
+      <div className="mt-3 flex flex-col sm:flex-row items-center gap-2 sm:pl-[55%]">
+        <div className="shrink-0 text-[var(--muted)] text-[10px] flex sm:flex-col items-center gap-0.5">
+          <span className="text-[14px] leading-none">↓</span>
+          <span className="whitespace-nowrap">slices into pre-tested work units</span>
+        </div>
+      </div>
+      <div className="mt-2 flex flex-col sm:flex-row items-center justify-center gap-2">
+        <div className="flex gap-1.5">
+          {[1, 2, 3].map((i) => (
+            <div
+              key={i}
+              className="rounded-lg border px-2.5 py-1.5 text-center"
+              style={{ borderColor: "#10b981", background: "color-mix(in srgb, #10b981 10%, var(--panel-bg))" }}
+            >
+              <div className="text-[13px] leading-none">⚙️</div>
+              <div className="text-[10px] font-bold leading-tight">Engineer {i}</div>
+            </div>
+          ))}
+          <div className="self-center text-[11px] text-[var(--muted)] pl-1">×N, in parallel</div>
+        </div>
+        <span className="text-[var(--muted)] text-[14px] leading-none rotate-90 sm:rotate-0">→</span>
+        <div
+          className="rounded-lg border px-3 py-2 text-center"
+          style={{ borderColor: "#0d9488", background: "color-mix(in srgb, #0d9488 10%, var(--panel-bg))" }}
+        >
+          <div className="text-[14px] leading-none">✅</div>
+          <div className="text-[11.5px] font-bold leading-tight">Working system</div>
+          <div className="text-[9.5px] text-[var(--muted)]">every unit arrives with its tests</div>
+        </div>
+      </div>
+
+      <p className="mt-5 pt-4 border-t border-[var(--border)] text-center text-[11px] text-[var(--muted)]">
+        Humans steer at the level of <strong className="text-[var(--text-soft)]">intent and structure</strong> — approving
+        the decisions that matter while the gate enforces the thousand that don&apos;t.
+      </p>
+    </div>
+  );
+}
+
 const TABS = [
   ["Explore", "the whole system as a C4 overview — double-click any container to dive to its internals, hover to trace wiring"],
   ["Architecture", "the solution as container lanes with plain-English relationships"],
@@ -154,6 +249,7 @@ export default function PitchPage() {
             every interaction through a typed graphAPI, so humans, agents and tools all ask the
             same source of truth instead of parsing code.
           </p>
+          <Infographic />
           <div className="mt-6 grid sm:grid-cols-2 gap-3">
             {UNLOCKS.map((u) => (
               <div key={u.title} className="rounded-xl border border-[var(--border)] bg-[var(--panel-bg)] p-4">
