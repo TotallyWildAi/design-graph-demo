@@ -1,0 +1,5655 @@
+{
+  "projectId" : "notes-app",
+  "nodes" : [ {
+    "id" : "sys:notes-app",
+    "kind" : "SYSTEM",
+    "name" : "Personal Time-Notes & Insight System",
+    "description" : "Personal notes that are always time-prefixed, reference deduplicated people cards, and can be queried in free text for synthesized text answers over the whole timeline.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "req:R1",
+    "kind" : "REQUIREMENT",
+    "name" : "R1",
+    "description" : "every note is time-prefixed",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "req:R2",
+    "kind" : "REQUIREMENT",
+    "name" : "R2",
+    "description" : "temporal value supports instant/time-only/date-only/datetime/range(hours,days,weeks,months,years)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "req:R3",
+    "kind" : "REQUIREMENT",
+    "name" : "R3",
+    "description" : "notes reference deduplicated shared person cards",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "req:R4",
+    "kind" : "REQUIREMENT",
+    "name" : "R4",
+    "description" : "free-text question -> synthesized text answer over all notes (timeline/psych/causal)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "req:R5",
+    "kind" : "REQUIREMENT",
+    "name" : "R5",
+    "description" : "durable persistence of notes, temporal, people, links",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "req:R6",
+    "kind" : "REQUIREMENT",
+    "name" : "R6",
+    "description" : "React UI to create notes + ask questions",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "req:R7",
+    "kind" : "REQUIREMENT",
+    "name" : "R7",
+    "description" : "testable UI<->backend contract with its own tests",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "req:R8",
+    "kind" : "REQUIREMENT",
+    "name" : "R8",
+    "description" : "Embabel LLM-backed analysis",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "req:R9",
+    "kind" : "REQUIREMENT",
+    "name" : "R9",
+    "description" : "model events + actions with WHO was involved and WHEN they happened",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "req:R10",
+    "kind" : "REQUIREMENT",
+    "name" : "R10",
+    "description" : "track behaviour episodes a person exhibits over a time period (start..end)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "req:R11",
+    "kind" : "REQUIREMENT",
+    "name" : "R11",
+    "description" : "detect a sudden mood shift at the precise instant it occurs (from->to + trigger)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "req:R12",
+    "kind" : "REQUIREMENT",
+    "name" : "R12",
+    "description" : "query a person's behavioural timeline (events, episodes, mood shifts) over time",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "cont:frontend",
+    "kind" : "CONTAINER",
+    "name" : "frontend",
+    "description" : "React single-page app: create notes + ask questions.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "frontend",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "tech" : "React 19 + Vite + TS",
+      "containerType" : "frontend"
+    }
+  }, {
+    "id" : "cont:backend",
+    "kind" : "CONTAINER",
+    "name" : "backend",
+    "description" : "Spring Boot microservice: notes API, temporal parsing, people dedup, LLM analysis.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "microservice",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "containerType" : "microservice",
+      "tech" : "Spring Boot 3.5 + Embabel 0.4.0 + Java 21",
+      "architecture" : "hexagonal"
+    }
+  }, {
+    "id" : "cont:db",
+    "kind" : "CONTAINER",
+    "name" : "db",
+    "description" : "Postgres relational store for notes, people, and links.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "database",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "tech" : "Postgres 17",
+      "containerType" : "database"
+    }
+  }, {
+    "id" : "cont:contract",
+    "kind" : "CONTAINER",
+    "name" : "contract",
+    "description" : "Shared UI<->backend API contract + its conformance test.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "shared-contract",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "tech" : "OpenAPI + Spring Cloud Contract",
+      "containerType" : "shared-contract"
+    }
+  }, {
+    "id" : "ext:anthropic",
+    "kind" : "EXTERNAL_SYSTEM",
+    "name" : "Anthropic LLM API",
+    "description" : "Third-party LLM API powering the Embabel analysis agent.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "cfg:embabel-default-llm",
+    "kind" : "CONFIG",
+    "name" : "embabel.models.default-llm",
+    "description" : "Default Embabel chat model used by the analysis agent.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "value" : "claude-haiku-4-5",
+      "key" : "embabel.models.default-llm"
+    }
+  }, {
+    "id" : "cfg:datasource",
+    "kind" : "CONFIG",
+    "name" : "spring.datasource.url",
+    "description" : "JDBC URL of the Postgres datasource.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "key" : "spring.datasource.url"
+    }
+  }, {
+    "id" : "contract:notes-api",
+    "kind" : "CONTRACT",
+    "name" : "Notes REST API contract",
+    "description" : "The testable UI<->backend REST contract for notes + query.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "contract:notes-api#createNote",
+    "kind" : "ENDPOINT",
+    "name" : "createNote",
+    "description" : "Contract op: create a time-prefixed note (carries CreateNoteRequest -> NoteResponse).",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "contract-op",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "requestDto" : "CreateNoteRequest",
+      "httpMethod" : "POST",
+      "path" : "/notes",
+      "responseDto" : "NoteResponse"
+    }
+  }, {
+    "id" : "contract:notes-api#listNotes",
+    "kind" : "ENDPOINT",
+    "name" : "listNotes",
+    "description" : "Contract op: list all notes (carries -> List<NoteResponse>).",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "contract-op",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "responseDto" : "List<NoteResponse>",
+      "httpMethod" : "GET",
+      "path" : "/notes"
+    }
+  }, {
+    "id" : "contract:notes-api#query",
+    "kind" : "ENDPOINT",
+    "name" : "query",
+    "description" : "Contract op: ask a free-text question (carries QueryRequest -> QueryResponse).",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "contract-op",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "requestDto" : "QueryRequest",
+      "httpMethod" : "POST",
+      "path" : "/query",
+      "responseDto" : "QueryResponse"
+    }
+  }, {
+    "id" : "contract:notes-api#linkPeople",
+    "kind" : "ENDPOINT",
+    "name" : "linkPeople",
+    "description" : "Contract op: link existing people to an existing note (carries LinkPeopleRequest -> NoteResponse).",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "contract-op",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "requestDto" : "LinkPeopleRequest",
+      "httpMethod" : "POST",
+      "path" : "/notes/{id}/people",
+      "responseDto" : "NoteResponse"
+    }
+  }, {
+    "id" : "dep:spring-web",
+    "kind" : "DEPENDENCY",
+    "name" : "spring-boot-starter-web",
+    "description" : "maven dependency spring-boot-starter-web 3.5.0",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "maven-dependency",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "groupId" : "org.springframework.boot",
+      "scope" : "compile",
+      "artifactId" : "spring-boot-starter-web",
+      "ecosystem" : "maven",
+      "version" : "3.5.0"
+    }
+  }, {
+    "id" : "dep:spring-jpa",
+    "kind" : "DEPENDENCY",
+    "name" : "spring-boot-starter-data-jpa",
+    "description" : "maven dependency spring-boot-starter-data-jpa 3.5.0",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "maven-dependency",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "groupId" : "org.springframework.boot",
+      "scope" : "compile",
+      "artifactId" : "spring-boot-starter-data-jpa",
+      "ecosystem" : "maven",
+      "version" : "3.5.0"
+    }
+  }, {
+    "id" : "dep:embabel",
+    "kind" : "DEPENDENCY",
+    "name" : "embabel-agent-starter",
+    "description" : "maven dependency embabel-agent-starter 0.4.0",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "maven-dependency",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "groupId" : "com.embabel.agent",
+      "scope" : "compile",
+      "artifactId" : "embabel-agent-starter",
+      "ecosystem" : "maven",
+      "version" : "0.4.0"
+    }
+  }, {
+    "id" : "dep:postgresql",
+    "kind" : "DEPENDENCY",
+    "name" : "postgresql",
+    "description" : "maven dependency postgresql 42.7.4",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "maven-dependency",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "groupId" : "org.postgresql",
+      "scope" : "runtime",
+      "artifactId" : "postgresql",
+      "ecosystem" : "maven",
+      "version" : "42.7.4"
+    }
+  }, {
+    "id" : "dep:react",
+    "kind" : "DEPENDENCY",
+    "name" : "react",
+    "description" : "npm dependency react 19.0.0",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "npm-dependency",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "ecosystem" : "npm",
+      "version" : "19.0.0",
+      "name" : "react",
+      "scope" : "prod"
+    }
+  }, {
+    "id" : "dep:vite",
+    "kind" : "DEPENDENCY",
+    "name" : "vite",
+    "description" : "npm dependency vite 6.0.0",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "npm-dependency",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "ecosystem" : "npm",
+      "version" : "6.0.0",
+      "name" : "vite",
+      "scope" : "dev"
+    }
+  }, {
+    "id" : "dep:rtk",
+    "kind" : "DEPENDENCY",
+    "name" : "@reduxjs/toolkit",
+    "description" : "npm dependency @reduxjs/toolkit 2.5.0",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "npm-dependency",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "ecosystem" : "npm",
+      "version" : "2.5.0",
+      "name" : "@reduxjs/toolkit",
+      "scope" : "prod"
+    }
+  }, {
+    "id" : "img:postgres",
+    "kind" : "DOCKER_IMAGE",
+    "name" : "postgres:17",
+    "description" : "Postgres 17 Testcontainer pulled from docker.io for integration tests.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "registry-image",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "registry" : "docker.io",
+      "image" : "postgres",
+      "tag" : "17"
+    }
+  }, {
+    "id" : "img:app-it",
+    "kind" : "DOCKER_IMAGE",
+    "name" : "app-it",
+    "description" : "The app image built locally from a Dockerfile for integration tests.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "dockerfile-image",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dockerfile" : "src/it/Dockerfile",
+      "buildContext" : "."
+    }
+  }, {
+    "id" : "test:AbstractIntegrationTest",
+    "kind" : "TYPE",
+    "name" : "AbstractIntegrationTest",
+    "description" : "Abstract base that boots the shared Testcontainers (Postgres + app image) for the integration suite.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "integration-test-base",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "test:NoteApiIT#createNote_persists()",
+    "kind" : "METHOD",
+    "name" : "createNote_persists",
+    "description" : "Integration test: posts a note and asserts it is persisted end-to-end.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "integration-test",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "createNote_persists()",
+      "returnType" : "void"
+    }
+  }, {
+    "id" : "mod:notes-domain",
+    "kind" : "CONTAINER",
+    "name" : "notes-domain",
+    "description" : "Multi-module Maven module holding the pure notes domain (hexagonal core).",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "maven-module",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "artifactId" : "notes-domain",
+      "packaging" : "jar"
+    }
+  }, {
+    "id" : "comp:NoteDomain",
+    "kind" : "COMPONENT",
+    "name" : "NoteDomain",
+    "description" : "Pure domain core for notes — no outward dependency on adapters.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "domain",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "m:NoteDomain#prefixTime(String,TemporalValue)",
+    "kind" : "METHOD",
+    "name" : "prefixTime",
+    "description" : "Prefixes a note's text with its resolved temporal value.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "read",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "prefixTime(String,TemporalValue)",
+      "returnType" : "String"
+    }
+  }, {
+    "id" : "comp:SecurityConfig",
+    "kind" : "COMPONENT",
+    "name" : "SecurityConfig",
+    "description" : "Spring Security policy: every notes-api op requires a valid bearer token.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "security-policy",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "ext:local-jwks",
+    "kind" : "EXTERNAL_SYSTEM",
+    "name" : "Local dev JWKS server",
+    "description" : "A local OAuth2 authorization server (ES256) issuing bearer tokens for local runs — no cloud IdP; ships as an optional docker-compose 'auth' service.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "authorization-server",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "runtime" : "local dev JWKS container (docker-compose 'auth' service, optional)",
+      "issuerUri" : "http://localhost:9099"
+    }
+  }, {
+    "id" : "ext:jwks",
+    "kind" : "EXTERNAL_SYSTEM",
+    "name" : "Local JWKS endpoint",
+    "description" : "The local dev server's JWKS endpoint exposing the public keys used to verify token signatures.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "jwks",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "jwksUri" : "http://localhost:9099/.well-known/jwks.json"
+    }
+  }, {
+    "id" : "comp:NoteForm",
+    "kind" : "COMPONENT",
+    "name" : "NoteForm",
+    "description" : "Form to create a time-prefixed note with people.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "ReactComponent",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "comp:QueryView",
+    "kind" : "COMPONENT",
+    "name" : "QueryView",
+    "description" : "View to ask a free-text question and render the synthesized answer.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "ReactComponent",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "comp:ApiClient",
+    "kind" : "COMPONENT",
+    "name" : "ApiClient",
+    "description" : "Typed client calling the backend notes API.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "ReactComponent",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "comp:NoteController",
+    "kind" : "COMPONENT",
+    "name" : "NoteController",
+    "description" : "REST controller exposing notes + query endpoints.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "Controller",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "comp:NoteService",
+    "kind" : "COMPONENT",
+    "name" : "NoteService",
+    "description" : "Creates notes, parses temporal, links people.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "Service",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "comp:PersonService",
+    "kind" : "COMPONENT",
+    "name" : "PersonService",
+    "description" : "Deduplicates and resolves shared person cards.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "Service",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "comp:RelationshipService",
+    "kind" : "COMPONENT",
+    "name" : "RelationshipService",
+    "description" : "Manages people↔people relationships. BIDIRECTIONAL relationships (e.g. mother↔child, partner↔partner, sibling↔sibling) auto-insert the inverse row; UNIDIRECTIONAL ones (e.g. 'a stranger told D something') create only the single directed row.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "Service",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "comp:TemporalParser",
+    "kind" : "COMPONENT",
+    "name" : "TemporalParser",
+    "description" : "Parses free-text time prefixes into a TemporalValue.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "Service",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "comp:AnalysisAgent",
+    "kind" : "COMPONENT",
+    "name" : "AnalysisAgent",
+    "description" : "Embabel LLM agent that answers free-text questions over all notes.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "Agent",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "comp:NoteRepository",
+    "kind" : "COMPONENT",
+    "name" : "NoteRepository",
+    "description" : "Persists notes + note-person links.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "Repository",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "comp:PersonRepository",
+    "kind" : "COMPONENT",
+    "name" : "PersonRepository",
+    "description" : "Persists + looks up deduplicated people.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "Repository",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "comp:Migrations",
+    "kind" : "COMPONENT",
+    "name" : "Migrations",
+    "description" : "Schema migration owner for the data plane.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "Config",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "type:TemporalValue",
+    "kind" : "TYPE",
+    "name" : "TemporalValue",
+    "description" : "Immutable temporal value: a kind plus start/end instants.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "record",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaKind" : "record",
+      "kindValues" : [ "INSTANT", "TIME_ONLY", "DATE_ONLY", "DATETIME", "RANGE" ],
+      "fields" : [ "kind", "start", "end" ]
+    }
+  }, {
+    "id" : "type:Person",
+    "kind" : "TYPE",
+    "name" : "Person",
+    "description" : "Deduplicated shared person card: identity + demographic fields.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "record",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "fields" : [ "firstName", "lastName", "dob", "sex" ],
+      "javaKind" : "record"
+    }
+  }, {
+    "id" : "field:Person.firstName",
+    "kind" : "FIELD",
+    "name" : "firstName",
+    "description" : "Given name of the person.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "String"
+    }
+  }, {
+    "id" : "field:Person.lastName",
+    "kind" : "FIELD",
+    "name" : "lastName",
+    "description" : "Family name of the person.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "String"
+    }
+  }, {
+    "id" : "field:Person.dob",
+    "kind" : "FIELD",
+    "name" : "dob",
+    "description" : "Date of birth.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "LocalDate"
+    }
+  }, {
+    "id" : "field:Person.sex",
+    "kind" : "FIELD",
+    "name" : "sex",
+    "description" : "Sex/gender of the person.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "String"
+    }
+  }, {
+    "id" : "type:CreateNoteRequest",
+    "kind" : "TYPE",
+    "name" : "CreateNoteRequest",
+    "description" : "DTO: note text + raw temporal prefix + person refs.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "DTO",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaKind" : "record"
+    }
+  }, {
+    "id" : "field:CreateNoteRequest.rawText",
+    "kind" : "FIELD",
+    "name" : "rawText",
+    "description" : "Raw free-text note body incl. the time prefix.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "String"
+    }
+  }, {
+    "id" : "field:CreateNoteRequest.occurredAt",
+    "kind" : "FIELD",
+    "name" : "occurredAt",
+    "description" : "Resolved temporal value the note is prefixed with.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "TemporalValue"
+    }
+  }, {
+    "id" : "field:CreateNoteRequest.personRefs",
+    "kind" : "FIELD",
+    "name" : "personRefs",
+    "description" : "Names/refs of people the note involves.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "List<String>"
+    }
+  }, {
+    "id" : "type:NoteResponse",
+    "kind" : "TYPE",
+    "name" : "NoteResponse",
+    "description" : "DTO: persisted note id + text + resolved temporal + people.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "DTO",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaKind" : "record"
+    }
+  }, {
+    "id" : "field:NoteResponse.id",
+    "kind" : "FIELD",
+    "name" : "id",
+    "description" : "Persisted note id.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "UUID"
+    }
+  }, {
+    "id" : "field:NoteResponse.text",
+    "kind" : "FIELD",
+    "name" : "text",
+    "description" : "Note body text.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "String"
+    }
+  }, {
+    "id" : "field:NoteResponse.temporal",
+    "kind" : "FIELD",
+    "name" : "temporal",
+    "description" : "Resolved temporal value of the note.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "TemporalValue"
+    }
+  }, {
+    "id" : "field:NoteResponse.people",
+    "kind" : "FIELD",
+    "name" : "people",
+    "description" : "Resolved deduplicated people on the note.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "List<PersonRef>"
+    }
+  }, {
+    "id" : "type:QueryRequest",
+    "kind" : "TYPE",
+    "name" : "QueryRequest",
+    "description" : "DTO: free-text question over all notes.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "DTO",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaKind" : "record"
+    }
+  }, {
+    "id" : "field:QueryRequest.question",
+    "kind" : "FIELD",
+    "name" : "question",
+    "description" : "Free-text question over the whole timeline.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "String"
+    }
+  }, {
+    "id" : "type:QueryResponse",
+    "kind" : "TYPE",
+    "name" : "QueryResponse",
+    "description" : "DTO: synthesized text answer.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "DTO",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaKind" : "record"
+    }
+  }, {
+    "id" : "field:QueryResponse.answer",
+    "kind" : "FIELD",
+    "name" : "answer",
+    "description" : "Synthesized text answer over all notes.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "String"
+    }
+  }, {
+    "id" : "type:LinkPeopleRequest",
+    "kind" : "TYPE",
+    "name" : "LinkPeopleRequest",
+    "description" : "DTO: link existing people to an existing note.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "DTO",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaKind" : "record"
+    }
+  }, {
+    "id" : "field:LinkPeopleRequest.noteId",
+    "kind" : "FIELD",
+    "name" : "noteId",
+    "description" : "Id of the note to link people to.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "UUID"
+    }
+  }, {
+    "id" : "field:LinkPeopleRequest.personIds",
+    "kind" : "FIELD",
+    "name" : "personIds",
+    "description" : "Ids of the people to link.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "List<UUID>"
+    }
+  }, {
+    "id" : "m:NoteController#createNote(CreateNoteRequest)",
+    "kind" : "METHOD",
+    "name" : "createNote",
+    "description" : "NoteResponse createNote(CreateNoteRequest)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "endpoint",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "NoteResponse createNote(CreateNoteRequest)",
+      "returnType" : "NoteResponse",
+      "paramTypes" : [ "CreateNoteRequest" ],
+      "httpRoute" : "POST /notes",
+      "annotations" : [ "PostMapping" ]
+    }
+  }, {
+    "id" : "m:NoteController#listNotes()",
+    "kind" : "METHOD",
+    "name" : "listNotes",
+    "description" : "List<NoteResponse> listNotes()",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "endpoint",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "List<NoteResponse> listNotes()",
+      "returnType" : "List<NoteResponse>",
+      "paramTypes" : [ ],
+      "httpRoute" : "GET /notes",
+      "annotations" : [ "GetMapping" ]
+    }
+  }, {
+    "id" : "m:NoteController#query(QueryRequest)",
+    "kind" : "METHOD",
+    "name" : "query",
+    "description" : "QueryResponse query(QueryRequest)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "endpoint",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "QueryResponse query(QueryRequest)",
+      "returnType" : "QueryResponse",
+      "paramTypes" : [ "QueryRequest" ],
+      "httpRoute" : "POST /query",
+      "annotations" : [ "PostMapping" ]
+    }
+  }, {
+    "id" : "m:NoteService#create(String,TemporalValue,List<String>)",
+    "kind" : "METHOD",
+    "name" : "create",
+    "description" : "Note create(String,TemporalValue,List<String>)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "transactional",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "Note create(String,TemporalValue,List<String>)",
+      "returnType" : "Note",
+      "paramTypes" : [ "String", "TemporalValue", "List<String>" ],
+      "annotations" : [ "Transactional" ]
+    }
+  }, {
+    "id" : "m:NoteService#linkPeople(Note,List<String>)",
+    "kind" : "METHOD",
+    "name" : "linkPeople",
+    "description" : "void linkPeople(Note,List<String>)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "transactional",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "void linkPeople(Note,List<String>)",
+      "returnType" : "void",
+      "paramTypes" : [ "Note", "List<String>" ],
+      "annotations" : [ "Transactional" ]
+    }
+  }, {
+    "id" : "m:PersonService#findOrCreate(String)",
+    "kind" : "METHOD",
+    "name" : "findOrCreate",
+    "description" : "Person findOrCreate(String)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "transactional",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "Person findOrCreate(String)",
+      "returnType" : "Person",
+      "paramTypes" : [ "String" ],
+      "annotations" : [ "Transactional" ]
+    }
+  }, {
+    "id" : "m:RelationshipService#link(UUID,UUID,String,boolean)",
+    "kind" : "METHOD",
+    "name" : "link",
+    "description" : "PersonRelationship link(UUID,UUID,String,boolean)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "transactional",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "PersonRelationship link(UUID,UUID,String,boolean)",
+      "returnType" : "PersonRelationship",
+      "paramTypes" : [ "UUID", "UUID", "String", "boolean" ],
+      "annotations" : [ "Transactional" ]
+    }
+  }, {
+    "id" : "m:RelationshipService#relationshipsOf(UUID)",
+    "kind" : "METHOD",
+    "name" : "relationshipsOf",
+    "description" : "List<PersonRelationship> relationshipsOf(UUID)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "read",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "List<PersonRelationship> relationshipsOf(UUID)",
+      "returnType" : "List<PersonRelationship>",
+      "paramTypes" : [ "UUID" ],
+      "annotations" : [ "Transactional(readOnly=true)" ]
+    }
+  }, {
+    "id" : "m:TemporalParser#parse(String)",
+    "kind" : "METHOD",
+    "name" : "parse",
+    "description" : "TemporalValue parse(String)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "public",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "TemporalValue parse(String)",
+      "returnType" : "TemporalValue",
+      "paramTypes" : [ "String" ],
+      "annotations" : [ ]
+    }
+  }, {
+    "id" : "m:AnalysisAgent#answer(QueryRequest)",
+    "kind" : "METHOD",
+    "name" : "answer",
+    "description" : "QueryResponse answer(QueryRequest)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "agent-action",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "QueryResponse answer(QueryRequest)",
+      "returnType" : "QueryResponse",
+      "paramTypes" : [ "QueryRequest" ],
+      "annotations" : [ "Action" ]
+    }
+  }, {
+    "id" : "m:NoteRepository#save(Note)",
+    "kind" : "METHOD",
+    "name" : "save",
+    "description" : "Note save(Note)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "repository-method",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "Note save(Note)",
+      "returnType" : "Note",
+      "paramTypes" : [ "Note" ],
+      "annotations" : [ ]
+    }
+  }, {
+    "id" : "m:NoteRepository#findAll()",
+    "kind" : "METHOD",
+    "name" : "findAll",
+    "description" : "List<Note> findAll()",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "repository-method",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "List<Note> findAll()",
+      "returnType" : "List<Note>",
+      "paramTypes" : [ ],
+      "annotations" : [ ]
+    }
+  }, {
+    "id" : "m:PersonRepository#findByNormalizedName(String)",
+    "kind" : "METHOD",
+    "name" : "findByNormalizedName",
+    "description" : "Optional<Person> findByNormalizedName(String)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "repository-method",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "Optional<Person> findByNormalizedName(String)",
+      "returnType" : "Optional<Person>",
+      "paramTypes" : [ "String" ],
+      "annotations" : [ ]
+    }
+  }, {
+    "id" : "m:ContractTest#noteApiConformance()",
+    "kind" : "METHOD",
+    "name" : "noteApiConformance",
+    "description" : "void noteApiConformance()",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "contract-test",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "void noteApiConformance()",
+      "returnType" : "void",
+      "paramTypes" : [ ],
+      "annotations" : [ "Test" ]
+    }
+  }, {
+    "id" : "m:NoteForm#submit(CreateNoteRequest)",
+    "kind" : "METHOD",
+    "name" : "submit",
+    "description" : "Promise<NoteResponse> submit(CreateNoteRequest)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "ui-handler",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "Promise<NoteResponse> submit(CreateNoteRequest)",
+      "returnType" : "Promise<NoteResponse>",
+      "paramTypes" : [ "CreateNoteRequest" ],
+      "annotations" : [ ]
+    }
+  }, {
+    "id" : "m:QueryView#ask(QueryRequest)",
+    "kind" : "METHOD",
+    "name" : "ask",
+    "description" : "Promise<QueryResponse> ask(QueryRequest)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "ui-handler",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "Promise<QueryResponse> ask(QueryRequest)",
+      "returnType" : "Promise<QueryResponse>",
+      "paramTypes" : [ "QueryRequest" ],
+      "annotations" : [ ]
+    }
+  }, {
+    "id" : "m:ApiClient#post(String,Object)",
+    "kind" : "METHOD",
+    "name" : "post",
+    "description" : "Promise<T> post(String,Object)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "public",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "Promise<T> post(String,Object)",
+      "returnType" : "Promise<T>",
+      "paramTypes" : [ "String", "Object" ],
+      "annotations" : [ ]
+    }
+  }, {
+    "id" : "tbl:note",
+    "kind" : "TABLE",
+    "name" : "note",
+    "description" : "Time-prefixed notes.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "table",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "containerType" : "table"
+    }
+  }, {
+    "id" : "tbl:person",
+    "kind" : "TABLE",
+    "name" : "person",
+    "description" : "Deduplicated person cards.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "table",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "containerType" : "table"
+    }
+  }, {
+    "id" : "tbl:note_person",
+    "kind" : "TABLE",
+    "name" : "note_person",
+    "description" : "Join table — many-to-many: a note can involve multiple people; a person can appear in many notes (joins note↔person).",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "table",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "cardinality" : "M:N",
+      "containerType" : "table"
+    }
+  }, {
+    "id" : "tbl:person_relationship",
+    "kind" : "TABLE",
+    "name" : "person_relationship",
+    "description" : "Directed people↔people relationship rows realising a person↔person many-to-many; bidirectional links store an inverse row too.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "table",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "cardinality" : "M:N",
+      "containerType" : "table"
+    }
+  }, {
+    "id" : "col:note.id",
+    "kind" : "COLUMN",
+    "name" : "id",
+    "description" : "id uuid",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "uuid"
+    }
+  }, {
+    "id" : "col:note.text",
+    "kind" : "COLUMN",
+    "name" : "text",
+    "description" : "text text",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "text"
+    }
+  }, {
+    "id" : "col:note.temporal_kind",
+    "kind" : "COLUMN",
+    "name" : "temporal_kind",
+    "description" : "temporal_kind varchar",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "varchar"
+    }
+  }, {
+    "id" : "col:note.temporal_start",
+    "kind" : "COLUMN",
+    "name" : "temporal_start",
+    "description" : "temporal_start timestamptz",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "timestamptz"
+    }
+  }, {
+    "id" : "col:note.temporal_end",
+    "kind" : "COLUMN",
+    "name" : "temporal_end",
+    "description" : "temporal_end timestamptz",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "timestamptz"
+    }
+  }, {
+    "id" : "col:note.created_at",
+    "kind" : "COLUMN",
+    "name" : "created_at",
+    "description" : "created_at timestamptz",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "timestamptz"
+    }
+  }, {
+    "id" : "col:person.id",
+    "kind" : "COLUMN",
+    "name" : "id",
+    "description" : "id uuid",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "uuid"
+    }
+  }, {
+    "id" : "col:person.name",
+    "kind" : "COLUMN",
+    "name" : "name",
+    "description" : "name text",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "text"
+    }
+  }, {
+    "id" : "col:person.normalized_name",
+    "kind" : "COLUMN",
+    "name" : "normalized_name",
+    "description" : "normalized_name varchar",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "varchar"
+    }
+  }, {
+    "id" : "col:person.first_name",
+    "kind" : "COLUMN",
+    "name" : "first_name",
+    "description" : "first_name text",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "text"
+    }
+  }, {
+    "id" : "col:person.last_name",
+    "kind" : "COLUMN",
+    "name" : "last_name",
+    "description" : "last_name text",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "text"
+    }
+  }, {
+    "id" : "col:person.dob",
+    "kind" : "COLUMN",
+    "name" : "dob",
+    "description" : "dob date",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "date"
+    }
+  }, {
+    "id" : "col:person.sex",
+    "kind" : "COLUMN",
+    "name" : "sex",
+    "description" : "sex varchar",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "varchar"
+    }
+  }, {
+    "id" : "col:note_person.note_id",
+    "kind" : "COLUMN",
+    "name" : "note_id",
+    "description" : "note_id uuid",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "uuid"
+    }
+  }, {
+    "id" : "col:note_person.person_id",
+    "kind" : "COLUMN",
+    "name" : "person_id",
+    "description" : "person_id uuid",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "uuid"
+    }
+  }, {
+    "id" : "col:person_relationship.id",
+    "kind" : "COLUMN",
+    "name" : "id",
+    "description" : "id uuid",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "uuid"
+    }
+  }, {
+    "id" : "col:person_relationship.person_id",
+    "kind" : "COLUMN",
+    "name" : "person_id",
+    "description" : "person_id uuid",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "uuid"
+    }
+  }, {
+    "id" : "col:person_relationship.related_person_id",
+    "kind" : "COLUMN",
+    "name" : "related_person_id",
+    "description" : "related_person_id uuid",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "uuid"
+    }
+  }, {
+    "id" : "col:person_relationship.relationship_type",
+    "kind" : "COLUMN",
+    "name" : "relationship_type",
+    "description" : "relationship_type varchar",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "varchar"
+    }
+  }, {
+    "id" : "col:person_relationship.bidirectional",
+    "kind" : "COLUMN",
+    "name" : "bidirectional",
+    "description" : "bidirectional boolean",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "boolean"
+    }
+  }, {
+    "id" : "col:person_relationship.created_at",
+    "kind" : "COLUMN",
+    "name" : "created_at",
+    "description" : "created_at timestamptz",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "timestamptz"
+    }
+  }, {
+    "id" : "mig:V1__init",
+    "kind" : "MIGRATION",
+    "name" : "V1__init",
+    "description" : "Initial schema: note, person, note_person, person_relationship.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "tool" : "liquibase"
+    }
+  }, {
+    "id" : "cont:deployment",
+    "kind" : "CONTAINER",
+    "name" : "deployment",
+    "description" : "Deployment plane: how the solution is packaged and run LOCALLY via Docker Compose.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "deployment",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "containerType" : "deployment"
+    }
+  }, {
+    "id" : "art:app",
+    "kind" : "DEPLOYABLE_ARTIFACT",
+    "name" : "app",
+    "description" : "The single shipping artifact: an OCI image built from ./Dockerfile that bundles BOTH the backend microservice AND the frontend SPA (served from the jar's static resources). Runs locally as the 'app' service in docker-compose, alongside a Postgres container — no cloud required.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "oci-image",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "envVars" : [ "SPRING_DATASOURCE_URL", "ANTHROPIC_BASE_URL", "SERVER_PORT" ],
+      "baseImage" : "eclipse-temurin:21-jre",
+      "healthcheck" : "/actuator/health",
+      "artifactType" : "docker-image",
+      "resources" : {
+        "cpu" : "1",
+        "memory" : "1Gi"
+      },
+      "dockerfile" : "./Dockerfile",
+      "startCommand" : "java -jar app.jar",
+      "ports" : [ 8050 ],
+      "secrets" : [ "ANTHROPIC_API_KEY", "SPRING_DATASOURCE_PASSWORD" ]
+    }
+  }, {
+    "id" : "env:local-docker",
+    "kind" : "ENVIRONMENT",
+    "name" : "local-docker",
+    "description" : "Local Docker Compose environment — the whole app runs in containers on the developer's machine (`docker compose up`).",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "environment",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "runtime" : "Docker Compose",
+      "command" : "docker compose up",
+      "tier" : "local"
+    }
+  }, {
+    "id" : "img:app",
+    "kind" : "DOCKER_IMAGE",
+    "name" : "notes-app (app)",
+    "description" : "The app container image built locally from ./Dockerfile — the compose 'app' service.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "dockerfile-image",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "exposes" : [ 8050 ],
+      "buildContext" : ".",
+      "dockerfile" : "./Dockerfile"
+    }
+  }, {
+    "id" : "img:postgres-db",
+    "kind" : "DOCKER_IMAGE",
+    "name" : "postgres:17 (db)",
+    "description" : "The Postgres 17 container the app runs against locally — the compose 'db' service (named volume for durable data).",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "registry-image",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "exposes" : [ 5432 ],
+      "tag" : "17",
+      "image" : "postgres",
+      "registry" : "docker.io"
+    }
+  }, {
+    "id" : "comp:TimelineController",
+    "kind" : "COMPONENT",
+    "name" : "TimelineController",
+    "description" : "REST controller for a person's behavioural timeline + recorded events.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "Controller",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "comp:BehaviourService",
+    "kind" : "COMPONENT",
+    "name" : "BehaviourService",
+    "description" : "Records events, WHO was involved, the actions taken, and the behaviour episodes a person exhibits over a period.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "Service",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "comp:TimelineService",
+    "kind" : "COMPONENT",
+    "name" : "TimelineService",
+    "description" : "Assembles a person's chronological timeline: events, actions, episodes, mood shifts.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "Service",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "comp:MoodShiftDetector",
+    "kind" : "COMPONENT",
+    "name" : "MoodShiftDetector",
+    "description" : "Scans a person's behaviour episodes to detect the precise instant a sudden mood shift occurred (from->to + likely trigger).",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "Service",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "comp:EventRepository",
+    "kind" : "COMPONENT",
+    "name" : "EventRepository",
+    "description" : "Persists events, the actions within them, and who was involved.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "Repository",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "comp:BehaviourRepository",
+    "kind" : "COMPONENT",
+    "name" : "BehaviourRepository",
+    "description" : "Persists behaviour episodes (a labelled behaviour over a period).",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "Repository",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "comp:MoodShiftRepository",
+    "kind" : "COMPONENT",
+    "name" : "MoodShiftRepository",
+    "description" : "Persists detected mood shifts.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "Repository",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : { }
+  }, {
+    "id" : "type:Event",
+    "kind" : "TYPE",
+    "name" : "Event",
+    "description" : "Something that happened at a point/period in time, optionally tied to a note.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "record",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "fields" : [ "id", "kind", "title", "occurredAt", "location", "noteId" ],
+      "javaKind" : "record"
+    }
+  }, {
+    "id" : "field:Event.id",
+    "kind" : "FIELD",
+    "name" : "id",
+    "description" : "Event id.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "UUID"
+    }
+  }, {
+    "id" : "field:Event.title",
+    "kind" : "FIELD",
+    "name" : "title",
+    "description" : "What happened.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "String"
+    }
+  }, {
+    "id" : "field:Event.occurredAt",
+    "kind" : "FIELD",
+    "name" : "occurredAt",
+    "description" : "WHEN it happened (instant or range).",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "TemporalValue"
+    }
+  }, {
+    "id" : "field:Event.location",
+    "kind" : "FIELD",
+    "name" : "location",
+    "description" : "Where it happened.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "String"
+    }
+  }, {
+    "id" : "field:Event.noteId",
+    "kind" : "FIELD",
+    "name" : "noteId",
+    "description" : "The note this event was captured from.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "UUID"
+    }
+  }, {
+    "id" : "type:Action",
+    "kind" : "TYPE",
+    "name" : "Action",
+    "description" : "What a specific person did within an event.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "record",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "fields" : [ "id", "eventId", "actorId", "verb", "occurredAt" ],
+      "javaKind" : "record"
+    }
+  }, {
+    "id" : "field:Action.actorId",
+    "kind" : "FIELD",
+    "name" : "actorId",
+    "description" : "WHO performed the action.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "UUID"
+    }
+  }, {
+    "id" : "field:Action.verb",
+    "kind" : "FIELD",
+    "name" : "verb",
+    "description" : "What they did.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "String"
+    }
+  }, {
+    "id" : "field:Action.occurredAt",
+    "kind" : "FIELD",
+    "name" : "occurredAt",
+    "description" : "WHEN they did it.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "TemporalValue"
+    }
+  }, {
+    "id" : "type:Involvement",
+    "kind" : "TYPE",
+    "name" : "Involvement",
+    "description" : "WHO was involved in an event, and in what role.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "record",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "fields" : [ "id", "personId", "eventId", "role" ],
+      "javaKind" : "record"
+    }
+  }, {
+    "id" : "field:Involvement.personId",
+    "kind" : "FIELD",
+    "name" : "personId",
+    "description" : "The person involved.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "UUID"
+    }
+  }, {
+    "id" : "field:Involvement.role",
+    "kind" : "FIELD",
+    "name" : "role",
+    "description" : "Their role (actor / witness / subject / mentioned).",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "String"
+    }
+  }, {
+    "id" : "type:BehaviourEpisode",
+    "kind" : "TYPE",
+    "name" : "BehaviourEpisode",
+    "description" : "A labelled behaviour a person exhibits over a time PERIOD (start..end), with intensity.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "record",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaKind" : "record",
+      "example" : {
+        "period" : "2026-02-10 .. 2026-03-13",
+        "intensity" : 4,
+        "baselineMood" : "settled & sociable",
+        "label" : "high social engagement",
+        "person" : "Dasha"
+      },
+      "fields" : [ "id", "personId", "label", "period", "intensity", "baselineMood" ]
+    }
+  }, {
+    "id" : "field:BehaviourEpisode.personId",
+    "kind" : "FIELD",
+    "name" : "personId",
+    "description" : "Whose behaviour this is.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "UUID"
+    }
+  }, {
+    "id" : "field:BehaviourEpisode.label",
+    "kind" : "FIELD",
+    "name" : "label",
+    "description" : "The behaviour (e.g. 'withdrawn', 'high social engagement').",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "String"
+    }
+  }, {
+    "id" : "field:BehaviourEpisode.period",
+    "kind" : "FIELD",
+    "name" : "period",
+    "description" : "The PERIOD the behaviour was exhibited over.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "TemporalValue"
+    }
+  }, {
+    "id" : "field:BehaviourEpisode.intensity",
+    "kind" : "FIELD",
+    "name" : "intensity",
+    "description" : "How pronounced (0..5).",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "int"
+    }
+  }, {
+    "id" : "type:MoodShift",
+    "kind" : "TYPE",
+    "name" : "MoodShift",
+    "description" : "A SUDDEN change of mood detected at a precise instant: from one mood to another, with the triggering event.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "record",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaKind" : "record",
+      "example" : {
+        "trigger" : "argument at the family dinner",
+        "afterEpisode" : "2026-02-10 .. 2026-03-13",
+        "detectedAt" : "2026-03-14T15:30:00Z",
+        "confidence" : 0.82,
+        "person" : "Dasha",
+        "from" : "settled & sociable",
+        "to" : "withdrawn"
+      },
+      "fields" : [ "id", "personId", "episodeId", "fromMood", "toMood", "detectedAt", "confidence", "triggerEventId" ]
+    }
+  }, {
+    "id" : "field:MoodShift.personId",
+    "kind" : "FIELD",
+    "name" : "personId",
+    "description" : "Whose mood shifted.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "UUID"
+    }
+  }, {
+    "id" : "field:MoodShift.fromMood",
+    "kind" : "FIELD",
+    "name" : "fromMood",
+    "description" : "Mood before the shift.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "String"
+    }
+  }, {
+    "id" : "field:MoodShift.toMood",
+    "kind" : "FIELD",
+    "name" : "toMood",
+    "description" : "Mood after the shift.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "String"
+    }
+  }, {
+    "id" : "field:MoodShift.detectedAt",
+    "kind" : "FIELD",
+    "name" : "detectedAt",
+    "description" : "The PRECISE instant the shift was detected.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "Instant"
+    }
+  }, {
+    "id" : "field:MoodShift.triggerEventId",
+    "kind" : "FIELD",
+    "name" : "triggerEventId",
+    "description" : "The event that appears to have triggered it.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "UUID"
+    }
+  }, {
+    "id" : "type:RecordEventRequest",
+    "kind" : "TYPE",
+    "name" : "RecordEventRequest",
+    "description" : "DTO: record an event + who was involved + when.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "DTO",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaKind" : "record"
+    }
+  }, {
+    "id" : "field:RecordEventRequest.title",
+    "kind" : "FIELD",
+    "name" : "title",
+    "description" : "What happened.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "String"
+    }
+  }, {
+    "id" : "field:RecordEventRequest.occurredAt",
+    "kind" : "FIELD",
+    "name" : "occurredAt",
+    "description" : "When it happened.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "TemporalValue"
+    }
+  }, {
+    "id" : "field:RecordEventRequest.involved",
+    "kind" : "FIELD",
+    "name" : "involved",
+    "description" : "People involved (refs) + roles.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "List<String>"
+    }
+  }, {
+    "id" : "type:PersonTimeline",
+    "kind" : "TYPE",
+    "name" : "PersonTimeline",
+    "description" : "DTO: a person's ordered timeline of events, episodes and mood shifts.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "DTO",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaKind" : "record"
+    }
+  }, {
+    "id" : "field:PersonTimeline.personId",
+    "kind" : "FIELD",
+    "name" : "personId",
+    "description" : "Whose timeline.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "UUID"
+    }
+  }, {
+    "id" : "field:PersonTimeline.entries",
+    "kind" : "FIELD",
+    "name" : "entries",
+    "description" : "Chronological entries.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "javaType" : "List<TimelineEntry>"
+    }
+  }, {
+    "id" : "tbl:event",
+    "kind" : "TABLE",
+    "name" : "event",
+    "description" : "Events that happened, time-stamped.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "table",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "containerType" : "table"
+    }
+  }, {
+    "id" : "tbl:action",
+    "kind" : "TABLE",
+    "name" : "action",
+    "description" : "Actions taken within an event by a specific person.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "table",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "containerType" : "table"
+    }
+  }, {
+    "id" : "tbl:involvement",
+    "kind" : "TABLE",
+    "name" : "involvement",
+    "description" : "Join: WHO (person) was involved in WHICH event, and their role (M:N).",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "table",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "cardinality" : "M:N",
+      "containerType" : "table"
+    }
+  }, {
+    "id" : "tbl:behaviour_episode",
+    "kind" : "TABLE",
+    "name" : "behaviour_episode",
+    "description" : "A behaviour exhibited by a person over a period.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "table",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "containerType" : "table"
+    }
+  }, {
+    "id" : "tbl:mood_shift",
+    "kind" : "TABLE",
+    "name" : "mood_shift",
+    "description" : "A sudden mood shift detected at a precise instant.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "table",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "containerType" : "table"
+    }
+  }, {
+    "id" : "col:event.id",
+    "kind" : "COLUMN",
+    "name" : "id",
+    "description" : "id uuid",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "uuid"
+    }
+  }, {
+    "id" : "col:event.kind",
+    "kind" : "COLUMN",
+    "name" : "kind",
+    "description" : "kind varchar",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "varchar"
+    }
+  }, {
+    "id" : "col:event.title",
+    "kind" : "COLUMN",
+    "name" : "title",
+    "description" : "title text",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "text"
+    }
+  }, {
+    "id" : "col:event.occurred_at",
+    "kind" : "COLUMN",
+    "name" : "occurred_at",
+    "description" : "occurred_at timestamptz",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "timestamptz"
+    }
+  }, {
+    "id" : "col:event.occurred_kind",
+    "kind" : "COLUMN",
+    "name" : "occurred_kind",
+    "description" : "occurred_kind varchar",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "varchar"
+    }
+  }, {
+    "id" : "col:event.location",
+    "kind" : "COLUMN",
+    "name" : "location",
+    "description" : "location text",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "text"
+    }
+  }, {
+    "id" : "col:event.note_id",
+    "kind" : "COLUMN",
+    "name" : "note_id",
+    "description" : "note_id uuid",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "uuid"
+    }
+  }, {
+    "id" : "col:action.id",
+    "kind" : "COLUMN",
+    "name" : "id",
+    "description" : "id uuid",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "uuid"
+    }
+  }, {
+    "id" : "col:action.event_id",
+    "kind" : "COLUMN",
+    "name" : "event_id",
+    "description" : "event_id uuid",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "uuid"
+    }
+  }, {
+    "id" : "col:action.actor_person_id",
+    "kind" : "COLUMN",
+    "name" : "actor_person_id",
+    "description" : "actor_person_id uuid",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "uuid"
+    }
+  }, {
+    "id" : "col:action.verb",
+    "kind" : "COLUMN",
+    "name" : "verb",
+    "description" : "verb varchar",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "varchar"
+    }
+  }, {
+    "id" : "col:action.occurred_at",
+    "kind" : "COLUMN",
+    "name" : "occurred_at",
+    "description" : "occurred_at timestamptz",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "timestamptz"
+    }
+  }, {
+    "id" : "col:involvement.id",
+    "kind" : "COLUMN",
+    "name" : "id",
+    "description" : "id uuid",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "uuid"
+    }
+  }, {
+    "id" : "col:involvement.person_id",
+    "kind" : "COLUMN",
+    "name" : "person_id",
+    "description" : "person_id uuid",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "uuid"
+    }
+  }, {
+    "id" : "col:involvement.event_id",
+    "kind" : "COLUMN",
+    "name" : "event_id",
+    "description" : "event_id uuid",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "uuid"
+    }
+  }, {
+    "id" : "col:involvement.role",
+    "kind" : "COLUMN",
+    "name" : "role",
+    "description" : "role varchar",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "varchar"
+    }
+  }, {
+    "id" : "col:behaviour_episode.id",
+    "kind" : "COLUMN",
+    "name" : "id",
+    "description" : "id uuid",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "uuid"
+    }
+  }, {
+    "id" : "col:behaviour_episode.person_id",
+    "kind" : "COLUMN",
+    "name" : "person_id",
+    "description" : "person_id uuid",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "uuid"
+    }
+  }, {
+    "id" : "col:behaviour_episode.label",
+    "kind" : "COLUMN",
+    "name" : "label",
+    "description" : "label varchar",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "varchar"
+    }
+  }, {
+    "id" : "col:behaviour_episode.started_at",
+    "kind" : "COLUMN",
+    "name" : "started_at",
+    "description" : "started_at timestamptz",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "timestamptz"
+    }
+  }, {
+    "id" : "col:behaviour_episode.ended_at",
+    "kind" : "COLUMN",
+    "name" : "ended_at",
+    "description" : "ended_at timestamptz",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "timestamptz"
+    }
+  }, {
+    "id" : "col:behaviour_episode.intensity",
+    "kind" : "COLUMN",
+    "name" : "intensity",
+    "description" : "intensity int",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "int"
+    }
+  }, {
+    "id" : "col:behaviour_episode.baseline_mood",
+    "kind" : "COLUMN",
+    "name" : "baseline_mood",
+    "description" : "baseline_mood varchar",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "varchar"
+    }
+  }, {
+    "id" : "col:mood_shift.id",
+    "kind" : "COLUMN",
+    "name" : "id",
+    "description" : "id uuid",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "uuid"
+    }
+  }, {
+    "id" : "col:mood_shift.person_id",
+    "kind" : "COLUMN",
+    "name" : "person_id",
+    "description" : "person_id uuid",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "uuid"
+    }
+  }, {
+    "id" : "col:mood_shift.episode_id",
+    "kind" : "COLUMN",
+    "name" : "episode_id",
+    "description" : "episode_id uuid",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "uuid"
+    }
+  }, {
+    "id" : "col:mood_shift.from_mood",
+    "kind" : "COLUMN",
+    "name" : "from_mood",
+    "description" : "from_mood varchar",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "varchar"
+    }
+  }, {
+    "id" : "col:mood_shift.to_mood",
+    "kind" : "COLUMN",
+    "name" : "to_mood",
+    "description" : "to_mood varchar",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "varchar"
+    }
+  }, {
+    "id" : "col:mood_shift.detected_at",
+    "kind" : "COLUMN",
+    "name" : "detected_at",
+    "description" : "detected_at timestamptz",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "timestamptz"
+    }
+  }, {
+    "id" : "col:mood_shift.confidence",
+    "kind" : "COLUMN",
+    "name" : "confidence",
+    "description" : "confidence numeric",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "numeric"
+    }
+  }, {
+    "id" : "col:mood_shift.trigger_event_id",
+    "kind" : "COLUMN",
+    "name" : "trigger_event_id",
+    "description" : "trigger_event_id uuid",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "dataType" : "uuid"
+    }
+  }, {
+    "id" : "mig:V2__behaviour",
+    "kind" : "MIGRATION",
+    "name" : "V2__behaviour",
+    "description" : "Behavioural/temporal schema: event, action, involvement, behaviour_episode, mood_shift.",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "",
+    "visibility" : "NOT_APPLICABLE",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "tool" : "liquibase"
+    }
+  }, {
+    "id" : "m:TimelineController#timeline(UUID)",
+    "kind" : "METHOD",
+    "name" : "timeline",
+    "description" : "PersonTimeline timeline(UUID)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "endpoint",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "PersonTimeline timeline(UUID)",
+      "returnType" : "PersonTimeline",
+      "paramTypes" : [ "UUID" ],
+      "httpRoute" : "GET /people/{id}/timeline",
+      "annotations" : [ "GetMapping" ]
+    }
+  }, {
+    "id" : "m:TimelineController#moodShifts(UUID)",
+    "kind" : "METHOD",
+    "name" : "moodShifts",
+    "description" : "List<MoodShift> moodShifts(UUID)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "endpoint",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "List<MoodShift> moodShifts(UUID)",
+      "returnType" : "List<MoodShift>",
+      "paramTypes" : [ "UUID" ],
+      "httpRoute" : "GET /people/{id}/mood-shifts",
+      "annotations" : [ "GetMapping" ]
+    }
+  }, {
+    "id" : "m:TimelineController#recordEvent(RecordEventRequest)",
+    "kind" : "METHOD",
+    "name" : "recordEvent",
+    "description" : "Event recordEvent(RecordEventRequest)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "endpoint",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "Event recordEvent(RecordEventRequest)",
+      "returnType" : "Event",
+      "paramTypes" : [ "RecordEventRequest" ],
+      "httpRoute" : "POST /events",
+      "annotations" : [ "PostMapping" ]
+    }
+  }, {
+    "id" : "m:BehaviourService#recordEvent(RecordEventRequest)",
+    "kind" : "METHOD",
+    "name" : "recordEvent",
+    "description" : "Event recordEvent(RecordEventRequest)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "transactional",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "Event recordEvent(RecordEventRequest)",
+      "returnType" : "Event",
+      "paramTypes" : [ "RecordEventRequest" ],
+      "annotations" : [ "Transactional" ]
+    }
+  }, {
+    "id" : "m:BehaviourService#recordInvolvement(UUID,UUID,String)",
+    "kind" : "METHOD",
+    "name" : "recordInvolvement",
+    "description" : "Involvement recordInvolvement(UUID,UUID,String)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "transactional",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "Involvement recordInvolvement(UUID,UUID,String)",
+      "returnType" : "Involvement",
+      "paramTypes" : [ "UUID", "UUID", "String" ],
+      "annotations" : [ "Transactional" ]
+    }
+  }, {
+    "id" : "m:BehaviourService#openEpisode(UUID,String,TemporalValue)",
+    "kind" : "METHOD",
+    "name" : "openEpisode",
+    "description" : "BehaviourEpisode openEpisode(UUID,String,TemporalValue)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "transactional",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "BehaviourEpisode openEpisode(UUID,String,TemporalValue)",
+      "returnType" : "BehaviourEpisode",
+      "paramTypes" : [ "UUID", "String", "TemporalValue" ],
+      "annotations" : [ "Transactional" ]
+    }
+  }, {
+    "id" : "m:TimelineService#assemble(UUID)",
+    "kind" : "METHOD",
+    "name" : "assemble",
+    "description" : "PersonTimeline assemble(UUID)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "read",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "PersonTimeline assemble(UUID)",
+      "returnType" : "PersonTimeline",
+      "paramTypes" : [ "UUID" ],
+      "annotations" : [ "Transactional(readOnly=true)" ]
+    }
+  }, {
+    "id" : "m:MoodShiftDetector#detect(UUID)",
+    "kind" : "METHOD",
+    "name" : "detect",
+    "description" : "List<MoodShift> detect(UUID)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "public",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "List<MoodShift> detect(UUID)",
+      "returnType" : "List<MoodShift>",
+      "paramTypes" : [ "UUID" ],
+      "annotations" : [ ]
+    }
+  }, {
+    "id" : "m:EventRepository#save(Event)",
+    "kind" : "METHOD",
+    "name" : "save",
+    "description" : "Event save(Event)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "repository-method",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "Event save(Event)",
+      "returnType" : "Event",
+      "paramTypes" : [ "Event" ],
+      "annotations" : [ ]
+    }
+  }, {
+    "id" : "m:EventRepository#findByPerson(UUID)",
+    "kind" : "METHOD",
+    "name" : "findByPerson",
+    "description" : "List<Event> findByPerson(UUID)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "repository-method",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "List<Event> findByPerson(UUID)",
+      "returnType" : "List<Event>",
+      "paramTypes" : [ "UUID" ],
+      "annotations" : [ ]
+    }
+  }, {
+    "id" : "m:BehaviourRepository#save(BehaviourEpisode)",
+    "kind" : "METHOD",
+    "name" : "save",
+    "description" : "BehaviourEpisode save(BehaviourEpisode)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "repository-method",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "BehaviourEpisode save(BehaviourEpisode)",
+      "returnType" : "BehaviourEpisode",
+      "paramTypes" : [ "BehaviourEpisode" ],
+      "annotations" : [ ]
+    }
+  }, {
+    "id" : "m:BehaviourRepository#findByPerson(UUID)",
+    "kind" : "METHOD",
+    "name" : "findByPerson",
+    "description" : "List<BehaviourEpisode> findByPerson(UUID)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "repository-method",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "List<BehaviourEpisode> findByPerson(UUID)",
+      "returnType" : "List<BehaviourEpisode>",
+      "paramTypes" : [ "UUID" ],
+      "annotations" : [ ]
+    }
+  }, {
+    "id" : "m:MoodShiftRepository#save(MoodShift)",
+    "kind" : "METHOD",
+    "name" : "save",
+    "description" : "MoodShift save(MoodShift)",
+    "status" : "PLANNED",
+    "version" : 1,
+    "stereotype" : "repository-method",
+    "visibility" : "PUBLIC",
+    "provenance" : "ARCHITECT",
+    "createdAt" : "2026-06-04T00:00:00Z",
+    "updatedAt" : "2026-06-04T00:00:00Z",
+    "metadata" : {
+      "signature" : "MoodShift save(MoodShift)",
+      "returnType" : "MoodShift",
+      "paramTypes" : [ "MoodShift" ],
+      "annotations" : [ ]
+    }
+  } ],
+  "edges" : [ {
+    "id" : "cont:backend|CONTAINS|img:postgres",
+    "src" : "cont:backend",
+    "dst" : "img:postgres",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|CONTAINS|img:app-it",
+    "src" : "cont:backend",
+    "dst" : "img:app-it",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|CONTAINS|test:AbstractIntegrationTest",
+    "src" : "cont:backend",
+    "dst" : "test:AbstractIntegrationTest",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "test:AbstractIntegrationTest|CONTAINS|test:NoteApiIT#createNote_persists()",
+    "src" : "test:AbstractIntegrationTest",
+    "dst" : "test:NoteApiIT#createNote_persists()",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|CONTAINS|mod:notes-domain",
+    "src" : "cont:backend",
+    "dst" : "mod:notes-domain",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "mod:notes-domain|CONTAINS|comp:NoteDomain",
+    "src" : "mod:notes-domain",
+    "dst" : "comp:NoteDomain",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:NoteDomain|CONTAINS|m:NoteDomain#prefixTime(String,TemporalValue)",
+    "src" : "comp:NoteDomain",
+    "dst" : "m:NoteDomain#prefixTime(String,TemporalValue)",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "test:AbstractIntegrationTest|DEPENDS_ON|img:postgres",
+    "src" : "test:AbstractIntegrationTest",
+    "dst" : "img:postgres",
+    "kind" : "DEPENDS_ON",
+    "description" : "boots a Postgres Testcontainer",
+    "metadata" : { }
+  }, {
+    "id" : "test:AbstractIntegrationTest|DEPENDS_ON|img:app-it",
+    "src" : "test:AbstractIntegrationTest",
+    "dst" : "img:app-it",
+    "kind" : "DEPENDS_ON",
+    "description" : "builds the app image locally for IT",
+    "metadata" : { }
+  }, {
+    "id" : "test:NoteApiIT#createNote_persists()|TESTS|contract:notes-api#createNote",
+    "src" : "test:NoteApiIT#createNote_persists()",
+    "dst" : "contract:notes-api#createNote",
+    "kind" : "TESTS",
+    "description" : "covers the create-note contract op end-to-end",
+    "metadata" : { }
+  }, {
+    "id" : "m:NoteRepository#save(Note)|WRITES|tbl:note",
+    "src" : "m:NoteRepository#save(Note)",
+    "dst" : "tbl:note",
+    "kind" : "WRITES",
+    "description" : "writes a note row",
+    "metadata" : { }
+  }, {
+    "id" : "m:NoteRepository#findAll()|READS|tbl:note",
+    "src" : "m:NoteRepository#findAll()",
+    "dst" : "tbl:note",
+    "kind" : "READS",
+    "description" : "reads note rows",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|CONTAINS|comp:SecurityConfig",
+    "src" : "cont:backend",
+    "dst" : "comp:SecurityConfig",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:SecurityConfig|SECURES|contract:notes-api#createNote",
+    "src" : "comp:SecurityConfig",
+    "dst" : "contract:notes-api#createNote",
+    "kind" : "SECURES",
+    "description" : "requires a valid bearer token",
+    "metadata" : { }
+  }, {
+    "id" : "comp:SecurityConfig|SECURES|contract:notes-api#listNotes",
+    "src" : "comp:SecurityConfig",
+    "dst" : "contract:notes-api#listNotes",
+    "kind" : "SECURES",
+    "description" : "requires a valid bearer token",
+    "metadata" : { }
+  }, {
+    "id" : "comp:SecurityConfig|SECURES|contract:notes-api#query",
+    "src" : "comp:SecurityConfig",
+    "dst" : "contract:notes-api#query",
+    "kind" : "SECURES",
+    "description" : "requires a valid bearer token",
+    "metadata" : { }
+  }, {
+    "id" : "comp:SecurityConfig|SECURES|contract:notes-api#linkPeople",
+    "src" : "comp:SecurityConfig",
+    "dst" : "contract:notes-api#linkPeople",
+    "kind" : "SECURES",
+    "description" : "requires a valid bearer token",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|DEPENDS_ON|ext:local-jwks",
+    "src" : "cont:backend",
+    "dst" : "ext:local-jwks",
+    "kind" : "DEPENDS_ON",
+    "description" : "validates bearer tokens against the local dev JWKS server",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|DEPENDS_ON|ext:jwks",
+    "src" : "cont:backend",
+    "dst" : "ext:jwks",
+    "kind" : "DEPENDS_ON",
+    "description" : "fetches public keys to verify token signatures",
+    "metadata" : { }
+  }, {
+    "id" : "sys:notes-app|CONTAINS|cont:frontend",
+    "src" : "sys:notes-app",
+    "dst" : "cont:frontend",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "sys:notes-app|CONTAINS|cont:backend",
+    "src" : "sys:notes-app",
+    "dst" : "cont:backend",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "sys:notes-app|CONTAINS|cont:db",
+    "src" : "sys:notes-app",
+    "dst" : "cont:db",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "sys:notes-app|CONTAINS|cont:contract",
+    "src" : "sys:notes-app",
+    "dst" : "cont:contract",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "sys:notes-app|CONTAINS|cont:deployment",
+    "src" : "sys:notes-app",
+    "dst" : "cont:deployment",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:deployment|CONTAINS|art:app",
+    "src" : "cont:deployment",
+    "dst" : "art:app",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:deployment|CONTAINS|env:local-docker",
+    "src" : "cont:deployment",
+    "dst" : "env:local-docker",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:deployment|CONTAINS|img:app",
+    "src" : "cont:deployment",
+    "dst" : "img:app",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:deployment|CONTAINS|img:postgres-db",
+    "src" : "cont:deployment",
+    "dst" : "img:postgres-db",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|CONTAINS|dep:spring-web",
+    "src" : "cont:backend",
+    "dst" : "dep:spring-web",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|CONTAINS|dep:spring-jpa",
+    "src" : "cont:backend",
+    "dst" : "dep:spring-jpa",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|CONTAINS|dep:embabel",
+    "src" : "cont:backend",
+    "dst" : "dep:embabel",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|CONTAINS|dep:postgresql",
+    "src" : "cont:backend",
+    "dst" : "dep:postgresql",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:frontend|CONTAINS|dep:react",
+    "src" : "cont:frontend",
+    "dst" : "dep:react",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:frontend|CONTAINS|dep:vite",
+    "src" : "cont:frontend",
+    "dst" : "dep:vite",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:frontend|CONTAINS|dep:rtk",
+    "src" : "cont:frontend",
+    "dst" : "dep:rtk",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:frontend|CONTAINS|comp:NoteForm",
+    "src" : "cont:frontend",
+    "dst" : "comp:NoteForm",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:frontend|CONTAINS|comp:QueryView",
+    "src" : "cont:frontend",
+    "dst" : "comp:QueryView",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:frontend|CONTAINS|comp:ApiClient",
+    "src" : "cont:frontend",
+    "dst" : "comp:ApiClient",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:NoteForm|CONTAINS|m:NoteForm#submit(CreateNoteRequest)",
+    "src" : "comp:NoteForm",
+    "dst" : "m:NoteForm#submit(CreateNoteRequest)",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:QueryView|CONTAINS|m:QueryView#ask(QueryRequest)",
+    "src" : "comp:QueryView",
+    "dst" : "m:QueryView#ask(QueryRequest)",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:ApiClient|CONTAINS|m:ApiClient#post(String,Object)",
+    "src" : "comp:ApiClient",
+    "dst" : "m:ApiClient#post(String,Object)",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|CONTAINS|comp:NoteController",
+    "src" : "cont:backend",
+    "dst" : "comp:NoteController",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|CONTAINS|comp:NoteService",
+    "src" : "cont:backend",
+    "dst" : "comp:NoteService",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|CONTAINS|comp:PersonService",
+    "src" : "cont:backend",
+    "dst" : "comp:PersonService",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|CONTAINS|comp:TemporalParser",
+    "src" : "cont:backend",
+    "dst" : "comp:TemporalParser",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|CONTAINS|comp:AnalysisAgent",
+    "src" : "cont:backend",
+    "dst" : "comp:AnalysisAgent",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|CONTAINS|comp:NoteRepository",
+    "src" : "cont:backend",
+    "dst" : "comp:NoteRepository",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|CONTAINS|comp:PersonRepository",
+    "src" : "cont:backend",
+    "dst" : "comp:PersonRepository",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|CONTAINS|comp:Migrations",
+    "src" : "cont:backend",
+    "dst" : "comp:Migrations",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|CONTAINS|mig:V1__init",
+    "src" : "cont:backend",
+    "dst" : "mig:V1__init",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|CONTAINS|cfg:embabel-default-llm",
+    "src" : "cont:backend",
+    "dst" : "cfg:embabel-default-llm",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|CONTAINS|cfg:datasource",
+    "src" : "cont:backend",
+    "dst" : "cfg:datasource",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:NoteController|CONTAINS|m:NoteController#createNote(CreateNoteRequest)",
+    "src" : "comp:NoteController",
+    "dst" : "m:NoteController#createNote(CreateNoteRequest)",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:NoteController|CONTAINS|m:NoteController#listNotes()",
+    "src" : "comp:NoteController",
+    "dst" : "m:NoteController#listNotes()",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:NoteController|CONTAINS|m:NoteController#query(QueryRequest)",
+    "src" : "comp:NoteController",
+    "dst" : "m:NoteController#query(QueryRequest)",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:NoteService|CONTAINS|m:NoteService#create(String,TemporalValue,List<String>)",
+    "src" : "comp:NoteService",
+    "dst" : "m:NoteService#create(String,TemporalValue,List<String>)",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:NoteService|CONTAINS|m:NoteService#linkPeople(Note,List<String>)",
+    "src" : "comp:NoteService",
+    "dst" : "m:NoteService#linkPeople(Note,List<String>)",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:PersonService|CONTAINS|m:PersonService#findOrCreate(String)",
+    "src" : "comp:PersonService",
+    "dst" : "m:PersonService#findOrCreate(String)",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:PersonService|CONTAINS|type:Person",
+    "src" : "comp:PersonService",
+    "dst" : "type:Person",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:Person|CONTAINS|field:Person.firstName",
+    "src" : "type:Person",
+    "dst" : "field:Person.firstName",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:Person|CONTAINS|field:Person.lastName",
+    "src" : "type:Person",
+    "dst" : "field:Person.lastName",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:Person|CONTAINS|field:Person.dob",
+    "src" : "type:Person",
+    "dst" : "field:Person.dob",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:Person|CONTAINS|field:Person.sex",
+    "src" : "type:Person",
+    "dst" : "field:Person.sex",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|CONTAINS|comp:RelationshipService",
+    "src" : "cont:backend",
+    "dst" : "comp:RelationshipService",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:RelationshipService|CONTAINS|m:RelationshipService#link(UUID,UUID,String,boolean)",
+    "src" : "comp:RelationshipService",
+    "dst" : "m:RelationshipService#link(UUID,UUID,String,boolean)",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:RelationshipService|CONTAINS|m:RelationshipService#relationshipsOf(UUID)",
+    "src" : "comp:RelationshipService",
+    "dst" : "m:RelationshipService#relationshipsOf(UUID)",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:TemporalParser|CONTAINS|m:TemporalParser#parse(String)",
+    "src" : "comp:TemporalParser",
+    "dst" : "m:TemporalParser#parse(String)",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:TemporalParser|CONTAINS|type:TemporalValue",
+    "src" : "comp:TemporalParser",
+    "dst" : "type:TemporalValue",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:AnalysisAgent|CONTAINS|m:AnalysisAgent#answer(QueryRequest)",
+    "src" : "comp:AnalysisAgent",
+    "dst" : "m:AnalysisAgent#answer(QueryRequest)",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:NoteRepository|CONTAINS|m:NoteRepository#save(Note)",
+    "src" : "comp:NoteRepository",
+    "dst" : "m:NoteRepository#save(Note)",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:NoteRepository|CONTAINS|m:NoteRepository#findAll()",
+    "src" : "comp:NoteRepository",
+    "dst" : "m:NoteRepository#findAll()",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:PersonRepository|CONTAINS|m:PersonRepository#findByNormalizedName(String)",
+    "src" : "comp:PersonRepository",
+    "dst" : "m:PersonRepository#findByNormalizedName(String)",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:contract|CONTAINS|contract:notes-api",
+    "src" : "cont:contract",
+    "dst" : "contract:notes-api",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "contract:notes-api|CONTAINS|contract:notes-api#createNote",
+    "src" : "contract:notes-api",
+    "dst" : "contract:notes-api#createNote",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "contract:notes-api|CONTAINS|contract:notes-api#listNotes",
+    "src" : "contract:notes-api",
+    "dst" : "contract:notes-api#listNotes",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "contract:notes-api|CONTAINS|contract:notes-api#query",
+    "src" : "contract:notes-api",
+    "dst" : "contract:notes-api#query",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "contract:notes-api|CONTAINS|contract:notes-api#linkPeople",
+    "src" : "contract:notes-api",
+    "dst" : "contract:notes-api#linkPeople",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "contract:notes-api|CONTAINS|type:CreateNoteRequest",
+    "src" : "contract:notes-api",
+    "dst" : "type:CreateNoteRequest",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "contract:notes-api|CONTAINS|type:NoteResponse",
+    "src" : "contract:notes-api",
+    "dst" : "type:NoteResponse",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "contract:notes-api|CONTAINS|type:QueryRequest",
+    "src" : "contract:notes-api",
+    "dst" : "type:QueryRequest",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "contract:notes-api|CONTAINS|type:QueryResponse",
+    "src" : "contract:notes-api",
+    "dst" : "type:QueryResponse",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "contract:notes-api|CONTAINS|type:LinkPeopleRequest",
+    "src" : "contract:notes-api",
+    "dst" : "type:LinkPeopleRequest",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:CreateNoteRequest|CONTAINS|field:CreateNoteRequest.rawText",
+    "src" : "type:CreateNoteRequest",
+    "dst" : "field:CreateNoteRequest.rawText",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:CreateNoteRequest|CONTAINS|field:CreateNoteRequest.occurredAt",
+    "src" : "type:CreateNoteRequest",
+    "dst" : "field:CreateNoteRequest.occurredAt",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:CreateNoteRequest|CONTAINS|field:CreateNoteRequest.personRefs",
+    "src" : "type:CreateNoteRequest",
+    "dst" : "field:CreateNoteRequest.personRefs",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:NoteResponse|CONTAINS|field:NoteResponse.id",
+    "src" : "type:NoteResponse",
+    "dst" : "field:NoteResponse.id",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:NoteResponse|CONTAINS|field:NoteResponse.text",
+    "src" : "type:NoteResponse",
+    "dst" : "field:NoteResponse.text",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:NoteResponse|CONTAINS|field:NoteResponse.temporal",
+    "src" : "type:NoteResponse",
+    "dst" : "field:NoteResponse.temporal",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:NoteResponse|CONTAINS|field:NoteResponse.people",
+    "src" : "type:NoteResponse",
+    "dst" : "field:NoteResponse.people",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:QueryRequest|CONTAINS|field:QueryRequest.question",
+    "src" : "type:QueryRequest",
+    "dst" : "field:QueryRequest.question",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:QueryResponse|CONTAINS|field:QueryResponse.answer",
+    "src" : "type:QueryResponse",
+    "dst" : "field:QueryResponse.answer",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:LinkPeopleRequest|CONTAINS|field:LinkPeopleRequest.noteId",
+    "src" : "type:LinkPeopleRequest",
+    "dst" : "field:LinkPeopleRequest.noteId",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:LinkPeopleRequest|CONTAINS|field:LinkPeopleRequest.personIds",
+    "src" : "type:LinkPeopleRequest",
+    "dst" : "field:LinkPeopleRequest.personIds",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "contract:notes-api|CONTAINS|m:ContractTest#noteApiConformance()",
+    "src" : "contract:notes-api",
+    "dst" : "m:ContractTest#noteApiConformance()",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "contract:notes-api#createNote|DEPENDS_ON|type:CreateNoteRequest",
+    "src" : "contract:notes-api#createNote",
+    "dst" : "type:CreateNoteRequest",
+    "kind" : "DEPENDS_ON",
+    "description" : "createNote request type.",
+    "metadata" : { }
+  }, {
+    "id" : "contract:notes-api#createNote|DEPENDS_ON|type:NoteResponse",
+    "src" : "contract:notes-api#createNote",
+    "dst" : "type:NoteResponse",
+    "kind" : "DEPENDS_ON",
+    "description" : "createNote response type.",
+    "metadata" : { }
+  }, {
+    "id" : "contract:notes-api#listNotes|DEPENDS_ON|type:NoteResponse",
+    "src" : "contract:notes-api#listNotes",
+    "dst" : "type:NoteResponse",
+    "kind" : "DEPENDS_ON",
+    "description" : "listNotes response element type (List<NoteResponse>).",
+    "metadata" : { }
+  }, {
+    "id" : "contract:notes-api#query|DEPENDS_ON|type:QueryRequest",
+    "src" : "contract:notes-api#query",
+    "dst" : "type:QueryRequest",
+    "kind" : "DEPENDS_ON",
+    "description" : "query request type.",
+    "metadata" : { }
+  }, {
+    "id" : "contract:notes-api#query|DEPENDS_ON|type:QueryResponse",
+    "src" : "contract:notes-api#query",
+    "dst" : "type:QueryResponse",
+    "kind" : "DEPENDS_ON",
+    "description" : "query response type.",
+    "metadata" : { }
+  }, {
+    "id" : "contract:notes-api#linkPeople|DEPENDS_ON|type:LinkPeopleRequest",
+    "src" : "contract:notes-api#linkPeople",
+    "dst" : "type:LinkPeopleRequest",
+    "kind" : "DEPENDS_ON",
+    "description" : "linkPeople request type.",
+    "metadata" : { }
+  }, {
+    "id" : "contract:notes-api#linkPeople|DEPENDS_ON|type:NoteResponse",
+    "src" : "contract:notes-api#linkPeople",
+    "dst" : "type:NoteResponse",
+    "kind" : "DEPENDS_ON",
+    "description" : "linkPeople response type.",
+    "metadata" : { }
+  }, {
+    "id" : "cont:db|CONTAINS|tbl:note",
+    "src" : "cont:db",
+    "dst" : "tbl:note",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:db|CONTAINS|tbl:person",
+    "src" : "cont:db",
+    "dst" : "tbl:person",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:db|CONTAINS|tbl:note_person",
+    "src" : "cont:db",
+    "dst" : "tbl:note_person",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:db|CONTAINS|tbl:person_relationship",
+    "src" : "cont:db",
+    "dst" : "tbl:person_relationship",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:note|CONTAINS|col:note.id",
+    "src" : "tbl:note",
+    "dst" : "col:note.id",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:note|CONTAINS|col:note.text",
+    "src" : "tbl:note",
+    "dst" : "col:note.text",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:note|CONTAINS|col:note.temporal_kind",
+    "src" : "tbl:note",
+    "dst" : "col:note.temporal_kind",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:note|CONTAINS|col:note.temporal_start",
+    "src" : "tbl:note",
+    "dst" : "col:note.temporal_start",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:note|CONTAINS|col:note.temporal_end",
+    "src" : "tbl:note",
+    "dst" : "col:note.temporal_end",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:note|CONTAINS|col:note.created_at",
+    "src" : "tbl:note",
+    "dst" : "col:note.created_at",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:person|CONTAINS|col:person.id",
+    "src" : "tbl:person",
+    "dst" : "col:person.id",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:person|CONTAINS|col:person.name",
+    "src" : "tbl:person",
+    "dst" : "col:person.name",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:person|CONTAINS|col:person.normalized_name",
+    "src" : "tbl:person",
+    "dst" : "col:person.normalized_name",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:person|CONTAINS|col:person.first_name",
+    "src" : "tbl:person",
+    "dst" : "col:person.first_name",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:person|CONTAINS|col:person.last_name",
+    "src" : "tbl:person",
+    "dst" : "col:person.last_name",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:person|CONTAINS|col:person.dob",
+    "src" : "tbl:person",
+    "dst" : "col:person.dob",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:person|CONTAINS|col:person.sex",
+    "src" : "tbl:person",
+    "dst" : "col:person.sex",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:note_person|CONTAINS|col:note_person.note_id",
+    "src" : "tbl:note_person",
+    "dst" : "col:note_person.note_id",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:note_person|CONTAINS|col:note_person.person_id",
+    "src" : "tbl:note_person",
+    "dst" : "col:note_person.person_id",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:person_relationship|CONTAINS|col:person_relationship.id",
+    "src" : "tbl:person_relationship",
+    "dst" : "col:person_relationship.id",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:person_relationship|CONTAINS|col:person_relationship.person_id",
+    "src" : "tbl:person_relationship",
+    "dst" : "col:person_relationship.person_id",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:person_relationship|CONTAINS|col:person_relationship.related_person_id",
+    "src" : "tbl:person_relationship",
+    "dst" : "col:person_relationship.related_person_id",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:person_relationship|CONTAINS|col:person_relationship.relationship_type",
+    "src" : "tbl:person_relationship",
+    "dst" : "col:person_relationship.relationship_type",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:person_relationship|CONTAINS|col:person_relationship.bidirectional",
+    "src" : "tbl:person_relationship",
+    "dst" : "col:person_relationship.bidirectional",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:person_relationship|CONTAINS|col:person_relationship.created_at",
+    "src" : "tbl:person_relationship",
+    "dst" : "col:person_relationship.created_at",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:frontend|DEPENDS_ON|cont:backend",
+    "src" : "cont:frontend",
+    "dst" : "cont:backend",
+    "kind" : "DEPENDS_ON",
+    "description" : "Frontend calls the backend notes API.",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|DEPENDS_ON|ext:anthropic",
+    "src" : "cont:backend",
+    "dst" : "ext:anthropic",
+    "kind" : "DEPENDS_ON",
+    "description" : "Backend analysis agent calls the Anthropic LLM API.",
+    "metadata" : { }
+  }, {
+    "id" : "cont:frontend|HAS_CONTRACT|cont:backend",
+    "src" : "cont:frontend",
+    "dst" : "cont:backend",
+    "kind" : "HAS_CONTRACT",
+    "description" : "UI<->backend boundary governed by the notes-api contract.",
+    "metadata" : { }
+  }, {
+    "id" : "comp:AnalysisAgent|USES_CONFIG|cfg:embabel-default-llm",
+    "src" : "comp:AnalysisAgent",
+    "dst" : "cfg:embabel-default-llm",
+    "kind" : "USES_CONFIG",
+    "description" : "reads config",
+    "metadata" : { }
+  }, {
+    "id" : "comp:NoteRepository|USES_CONFIG|cfg:datasource",
+    "src" : "comp:NoteRepository",
+    "dst" : "cfg:datasource",
+    "kind" : "USES_CONFIG",
+    "description" : "reads config",
+    "metadata" : { }
+  }, {
+    "id" : "ext:anthropic|USES_CONFIG|cfg:embabel-default-llm",
+    "src" : "ext:anthropic",
+    "dst" : "cfg:embabel-default-llm",
+    "kind" : "USES_CONFIG",
+    "description" : "reads config",
+    "metadata" : { }
+  }, {
+    "id" : "m:NoteController#createNote(CreateNoteRequest)|CALLS|m:NoteService#create(String,TemporalValue,List<String>)",
+    "src" : "m:NoteController#createNote(CreateNoteRequest)",
+    "dst" : "m:NoteService#create(String,TemporalValue,List<String>)",
+    "kind" : "CALLS",
+    "description" : "calls",
+    "metadata" : {
+      "argTypes" : [ "String", "TemporalValue", "List<String>" ]
+    }
+  }, {
+    "id" : "m:NoteController#createNote(CreateNoteRequest)|CALLS|m:TemporalParser#parse(String)",
+    "src" : "m:NoteController#createNote(CreateNoteRequest)",
+    "dst" : "m:TemporalParser#parse(String)",
+    "kind" : "CALLS",
+    "description" : "calls",
+    "metadata" : {
+      "argTypes" : [ "String" ]
+    }
+  }, {
+    "id" : "m:NoteService#create(String,TemporalValue,List<String>)|CALLS|m:NoteRepository#save(Note)",
+    "src" : "m:NoteService#create(String,TemporalValue,List<String>)",
+    "dst" : "m:NoteRepository#save(Note)",
+    "kind" : "CALLS",
+    "description" : "calls",
+    "metadata" : {
+      "argTypes" : [ "Note" ]
+    }
+  }, {
+    "id" : "m:NoteService#create(String,TemporalValue,List<String>)|CALLS|m:NoteService#linkPeople(Note,List<String>)",
+    "src" : "m:NoteService#create(String,TemporalValue,List<String>)",
+    "dst" : "m:NoteService#linkPeople(Note,List<String>)",
+    "kind" : "CALLS",
+    "description" : "calls",
+    "metadata" : {
+      "argTypes" : [ "Note", "List<String>" ]
+    }
+  }, {
+    "id" : "m:NoteService#linkPeople(Note,List<String>)|CALLS|m:PersonService#findOrCreate(String)",
+    "src" : "m:NoteService#linkPeople(Note,List<String>)",
+    "dst" : "m:PersonService#findOrCreate(String)",
+    "kind" : "CALLS",
+    "description" : "calls",
+    "metadata" : {
+      "argTypes" : [ "String" ]
+    }
+  }, {
+    "id" : "m:PersonService#findOrCreate(String)|CALLS|m:PersonRepository#findByNormalizedName(String)",
+    "src" : "m:PersonService#findOrCreate(String)",
+    "dst" : "m:PersonRepository#findByNormalizedName(String)",
+    "kind" : "CALLS",
+    "description" : "calls",
+    "metadata" : {
+      "argTypes" : [ "String" ]
+    }
+  }, {
+    "id" : "m:NoteController#listNotes()|CALLS|m:NoteRepository#findAll()",
+    "src" : "m:NoteController#listNotes()",
+    "dst" : "m:NoteRepository#findAll()",
+    "kind" : "CALLS",
+    "description" : "calls",
+    "metadata" : {
+      "argTypes" : [ ]
+    }
+  }, {
+    "id" : "m:NoteController#query(QueryRequest)|CALLS|m:AnalysisAgent#answer(QueryRequest)",
+    "src" : "m:NoteController#query(QueryRequest)",
+    "dst" : "m:AnalysisAgent#answer(QueryRequest)",
+    "kind" : "CALLS",
+    "description" : "calls",
+    "metadata" : {
+      "argTypes" : [ "QueryRequest" ]
+    }
+  }, {
+    "id" : "m:AnalysisAgent#answer(QueryRequest)|CALLS|m:NoteRepository#findAll()",
+    "src" : "m:AnalysisAgent#answer(QueryRequest)",
+    "dst" : "m:NoteRepository#findAll()",
+    "kind" : "CALLS",
+    "description" : "calls",
+    "metadata" : {
+      "argTypes" : [ ]
+    }
+  }, {
+    "id" : "comp:NoteForm|DEPENDS_ON|contract:notes-api#createNote",
+    "src" : "comp:NoteForm",
+    "dst" : "contract:notes-api#createNote",
+    "kind" : "DEPENDS_ON",
+    "description" : "NoteForm submits a new note via the createNote contract op.",
+    "metadata" : { }
+  }, {
+    "id" : "comp:NoteForm|DEPENDS_ON|contract:notes-api#linkPeople",
+    "src" : "comp:NoteForm",
+    "dst" : "contract:notes-api#linkPeople",
+    "kind" : "DEPENDS_ON",
+    "description" : "NoteForm attaches people via the linkPeople contract op.",
+    "metadata" : { }
+  }, {
+    "id" : "comp:QueryView|DEPENDS_ON|contract:notes-api#query",
+    "src" : "comp:QueryView",
+    "dst" : "contract:notes-api#query",
+    "kind" : "DEPENDS_ON",
+    "description" : "QueryView consumes the query contract op.",
+    "metadata" : { }
+  }, {
+    "id" : "comp:ApiClient|DEPENDS_ON|contract:notes-api#createNote",
+    "src" : "comp:ApiClient",
+    "dst" : "contract:notes-api#createNote",
+    "kind" : "DEPENDS_ON",
+    "description" : "ApiClient calls the createNote contract op.",
+    "metadata" : { }
+  }, {
+    "id" : "comp:ApiClient|DEPENDS_ON|contract:notes-api#listNotes",
+    "src" : "comp:ApiClient",
+    "dst" : "contract:notes-api#listNotes",
+    "kind" : "DEPENDS_ON",
+    "description" : "ApiClient calls the listNotes contract op.",
+    "metadata" : { }
+  }, {
+    "id" : "comp:ApiClient|DEPENDS_ON|contract:notes-api#query",
+    "src" : "comp:ApiClient",
+    "dst" : "contract:notes-api#query",
+    "kind" : "DEPENDS_ON",
+    "description" : "ApiClient calls the query contract op.",
+    "metadata" : { }
+  }, {
+    "id" : "comp:NoteController|IMPLEMENTS|contract:notes-api#createNote",
+    "src" : "comp:NoteController",
+    "dst" : "contract:notes-api#createNote",
+    "kind" : "IMPLEMENTS",
+    "description" : "NoteController serves the createNote contract op.",
+    "metadata" : { }
+  }, {
+    "id" : "comp:NoteController|IMPLEMENTS|contract:notes-api#listNotes",
+    "src" : "comp:NoteController",
+    "dst" : "contract:notes-api#listNotes",
+    "kind" : "IMPLEMENTS",
+    "description" : "NoteController serves the listNotes contract op.",
+    "metadata" : { }
+  }, {
+    "id" : "comp:NoteController|IMPLEMENTS|contract:notes-api#query",
+    "src" : "comp:NoteController",
+    "dst" : "contract:notes-api#query",
+    "kind" : "IMPLEMENTS",
+    "description" : "NoteController serves the query contract op.",
+    "metadata" : { }
+  }, {
+    "id" : "comp:NoteController|IMPLEMENTS|contract:notes-api#linkPeople",
+    "src" : "comp:NoteController",
+    "dst" : "contract:notes-api#linkPeople",
+    "kind" : "IMPLEMENTS",
+    "description" : "NoteController serves the linkPeople contract op.",
+    "metadata" : { }
+  }, {
+    "id" : "comp:NoteRepository|PERSISTS_TO|tbl:note",
+    "src" : "comp:NoteRepository",
+    "dst" : "tbl:note",
+    "kind" : "PERSISTS_TO",
+    "description" : "NoteRepository persists notes.",
+    "metadata" : {
+      "cardinality" : "1:N"
+    }
+  }, {
+    "id" : "comp:PersonRepository|PERSISTS_TO|tbl:person",
+    "src" : "comp:PersonRepository",
+    "dst" : "tbl:person",
+    "kind" : "PERSISTS_TO",
+    "description" : "PersonRepository persists people.",
+    "metadata" : {
+      "cardinality" : "1:N"
+    }
+  }, {
+    "id" : "comp:NoteRepository|PERSISTS_TO|tbl:note_person",
+    "src" : "comp:NoteRepository",
+    "dst" : "tbl:note_person",
+    "kind" : "PERSISTS_TO",
+    "description" : "NoteRepository writes note<->person links.",
+    "metadata" : {
+      "cardinality" : "1:N"
+    }
+  }, {
+    "id" : "comp:RelationshipService|PERSISTS_TO|tbl:person_relationship",
+    "src" : "comp:RelationshipService",
+    "dst" : "tbl:person_relationship",
+    "kind" : "PERSISTS_TO",
+    "description" : "RelationshipService persists people relationships.",
+    "metadata" : {
+      "cardinality" : "1:N"
+    }
+  }, {
+    "id" : "col:note_person.note_id|FK_TO|col:note.id",
+    "src" : "col:note_person.note_id",
+    "dst" : "col:note.id",
+    "kind" : "FK_TO",
+    "description" : "note_person.note_id references note.id.",
+    "metadata" : {
+      "cardinality" : "N:1"
+    }
+  }, {
+    "id" : "col:note_person.person_id|FK_TO|col:person.id",
+    "src" : "col:note_person.person_id",
+    "dst" : "col:person.id",
+    "kind" : "FK_TO",
+    "description" : "note_person.person_id references person.id.",
+    "metadata" : {
+      "cardinality" : "N:1"
+    }
+  }, {
+    "id" : "col:person_relationship.person_id|FK_TO|col:person.id",
+    "src" : "col:person_relationship.person_id",
+    "dst" : "col:person.id",
+    "kind" : "FK_TO",
+    "description" : "person_relationship.person_id references person.id.",
+    "metadata" : {
+      "cardinality" : "N:1"
+    }
+  }, {
+    "id" : "col:person_relationship.related_person_id|FK_TO|col:person.id",
+    "src" : "col:person_relationship.related_person_id",
+    "dst" : "col:person.id",
+    "kind" : "FK_TO",
+    "description" : "person_relationship.related_person_id references person.id.",
+    "metadata" : {
+      "cardinality" : "N:1"
+    }
+  }, {
+    "id" : "mig:V1__init|EVOLVES|tbl:note",
+    "src" : "mig:V1__init",
+    "dst" : "tbl:note",
+    "kind" : "EVOLVES",
+    "description" : "V1 creates the note table.",
+    "metadata" : {
+      "cardinality" : "1:N"
+    }
+  }, {
+    "id" : "mig:V1__init|EVOLVES|tbl:person",
+    "src" : "mig:V1__init",
+    "dst" : "tbl:person",
+    "kind" : "EVOLVES",
+    "description" : "V1 creates the person table.",
+    "metadata" : {
+      "cardinality" : "1:N"
+    }
+  }, {
+    "id" : "mig:V1__init|EVOLVES|tbl:note_person",
+    "src" : "mig:V1__init",
+    "dst" : "tbl:note_person",
+    "kind" : "EVOLVES",
+    "description" : "V1 creates the note_person table.",
+    "metadata" : {
+      "cardinality" : "1:N"
+    }
+  }, {
+    "id" : "mig:V1__init|EVOLVES|tbl:person_relationship",
+    "src" : "mig:V1__init",
+    "dst" : "tbl:person_relationship",
+    "kind" : "EVOLVES",
+    "description" : "V1 creates the person_relationship table.",
+    "metadata" : {
+      "cardinality" : "1:N"
+    }
+  }, {
+    "id" : "art:app|PACKAGES|cont:frontend",
+    "src" : "art:app",
+    "dst" : "cont:frontend",
+    "kind" : "PACKAGES",
+    "description" : "The React SPA is bundled into the image's static resources.",
+    "metadata" : { }
+  }, {
+    "id" : "art:app|PACKAGES|cont:backend",
+    "src" : "art:app",
+    "dst" : "cont:backend",
+    "kind" : "PACKAGES",
+    "description" : "The Spring Boot microservice is the image's main process.",
+    "metadata" : { }
+  }, {
+    "id" : "art:app|DEPLOYS_TO|env:local-docker",
+    "src" : "art:app",
+    "dst" : "env:local-docker",
+    "kind" : "DEPLOYS_TO",
+    "description" : "app image runs as the 'app' service via docker-compose.",
+    "metadata" : { }
+  }, {
+    "id" : "env:local-docker|DEPENDS_ON|img:app",
+    "src" : "env:local-docker",
+    "dst" : "img:app",
+    "kind" : "DEPENDS_ON",
+    "description" : "compose builds + runs the app container.",
+    "metadata" : { }
+  }, {
+    "id" : "env:local-docker|DEPENDS_ON|img:postgres-db",
+    "src" : "env:local-docker",
+    "dst" : "img:postgres-db",
+    "kind" : "DEPENDS_ON",
+    "description" : "compose runs the Postgres container.",
+    "metadata" : { }
+  }, {
+    "id" : "img:postgres|MIRRORS|img:postgres-db",
+    "src" : "img:postgres",
+    "dst" : "img:postgres-db",
+    "kind" : "MIRRORS",
+    "description" : "the Testcontainers Postgres mirrors the local-docker db (both postgres:17)",
+    "metadata" : { }
+  }, {
+    "id" : "img:app-it|MIRRORS|img:app",
+    "src" : "img:app-it",
+    "dst" : "img:app",
+    "kind" : "MIRRORS",
+    "description" : "the IT app image is built from the same Dockerfile compose deploys",
+    "metadata" : { }
+  }, {
+    "id" : "m:NoteController#createNote(CreateNoteRequest)|IMPLEMENTS|req:R1",
+    "src" : "m:NoteController#createNote(CreateNoteRequest)",
+    "dst" : "req:R1",
+    "kind" : "IMPLEMENTS",
+    "description" : "implements requirement",
+    "metadata" : { }
+  }, {
+    "id" : "m:TemporalParser#parse(String)|IMPLEMENTS|req:R2",
+    "src" : "m:TemporalParser#parse(String)",
+    "dst" : "req:R2",
+    "kind" : "IMPLEMENTS",
+    "description" : "implements requirement",
+    "metadata" : { }
+  }, {
+    "id" : "type:TemporalValue|IMPLEMENTS|req:R2",
+    "src" : "type:TemporalValue",
+    "dst" : "req:R2",
+    "kind" : "IMPLEMENTS",
+    "description" : "implements requirement",
+    "metadata" : { }
+  }, {
+    "id" : "m:PersonService#findOrCreate(String)|IMPLEMENTS|req:R3",
+    "src" : "m:PersonService#findOrCreate(String)",
+    "dst" : "req:R3",
+    "kind" : "IMPLEMENTS",
+    "description" : "implements requirement",
+    "metadata" : { }
+  }, {
+    "id" : "comp:RelationshipService|IMPLEMENTS|req:R3",
+    "src" : "comp:RelationshipService",
+    "dst" : "req:R3",
+    "kind" : "IMPLEMENTS",
+    "description" : "implements requirement",
+    "metadata" : { }
+  }, {
+    "id" : "m:AnalysisAgent#answer(QueryRequest)|IMPLEMENTS|req:R4",
+    "src" : "m:AnalysisAgent#answer(QueryRequest)",
+    "dst" : "req:R4",
+    "kind" : "IMPLEMENTS",
+    "description" : "implements requirement",
+    "metadata" : { }
+  }, {
+    "id" : "m:NoteController#query(QueryRequest)|IMPLEMENTS|req:R4",
+    "src" : "m:NoteController#query(QueryRequest)",
+    "dst" : "req:R4",
+    "kind" : "IMPLEMENTS",
+    "description" : "implements requirement",
+    "metadata" : { }
+  }, {
+    "id" : "comp:NoteRepository|IMPLEMENTS|req:R5",
+    "src" : "comp:NoteRepository",
+    "dst" : "req:R5",
+    "kind" : "IMPLEMENTS",
+    "description" : "implements requirement",
+    "metadata" : { }
+  }, {
+    "id" : "comp:PersonRepository|IMPLEMENTS|req:R5",
+    "src" : "comp:PersonRepository",
+    "dst" : "req:R5",
+    "kind" : "IMPLEMENTS",
+    "description" : "implements requirement",
+    "metadata" : { }
+  }, {
+    "id" : "comp:NoteForm|IMPLEMENTS|req:R6",
+    "src" : "comp:NoteForm",
+    "dst" : "req:R6",
+    "kind" : "IMPLEMENTS",
+    "description" : "implements requirement",
+    "metadata" : { }
+  }, {
+    "id" : "comp:QueryView|IMPLEMENTS|req:R6",
+    "src" : "comp:QueryView",
+    "dst" : "req:R6",
+    "kind" : "IMPLEMENTS",
+    "description" : "implements requirement",
+    "metadata" : { }
+  }, {
+    "id" : "m:ContractTest#noteApiConformance()|IMPLEMENTS|req:R7",
+    "src" : "m:ContractTest#noteApiConformance()",
+    "dst" : "req:R7",
+    "kind" : "IMPLEMENTS",
+    "description" : "implements requirement",
+    "metadata" : { }
+  }, {
+    "id" : "contract:notes-api|IMPLEMENTS|req:R7",
+    "src" : "contract:notes-api",
+    "dst" : "req:R7",
+    "kind" : "IMPLEMENTS",
+    "description" : "implements requirement",
+    "metadata" : { }
+  }, {
+    "id" : "comp:AnalysisAgent|IMPLEMENTS|req:R8",
+    "src" : "comp:AnalysisAgent",
+    "dst" : "req:R8",
+    "kind" : "IMPLEMENTS",
+    "description" : "implements requirement",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|CONTAINS|comp:TimelineController",
+    "src" : "cont:backend",
+    "dst" : "comp:TimelineController",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|CONTAINS|comp:BehaviourService",
+    "src" : "cont:backend",
+    "dst" : "comp:BehaviourService",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|CONTAINS|comp:TimelineService",
+    "src" : "cont:backend",
+    "dst" : "comp:TimelineService",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|CONTAINS|comp:MoodShiftDetector",
+    "src" : "cont:backend",
+    "dst" : "comp:MoodShiftDetector",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|CONTAINS|comp:EventRepository",
+    "src" : "cont:backend",
+    "dst" : "comp:EventRepository",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|CONTAINS|comp:BehaviourRepository",
+    "src" : "cont:backend",
+    "dst" : "comp:BehaviourRepository",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|CONTAINS|comp:MoodShiftRepository",
+    "src" : "cont:backend",
+    "dst" : "comp:MoodShiftRepository",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:backend|CONTAINS|mig:V2__behaviour",
+    "src" : "cont:backend",
+    "dst" : "mig:V2__behaviour",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:TimelineController|CONTAINS|m:TimelineController#timeline(UUID)",
+    "src" : "comp:TimelineController",
+    "dst" : "m:TimelineController#timeline(UUID)",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:TimelineController|CONTAINS|m:TimelineController#moodShifts(UUID)",
+    "src" : "comp:TimelineController",
+    "dst" : "m:TimelineController#moodShifts(UUID)",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:TimelineController|CONTAINS|m:TimelineController#recordEvent(RecordEventRequest)",
+    "src" : "comp:TimelineController",
+    "dst" : "m:TimelineController#recordEvent(RecordEventRequest)",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:BehaviourService|CONTAINS|m:BehaviourService#recordEvent(RecordEventRequest)",
+    "src" : "comp:BehaviourService",
+    "dst" : "m:BehaviourService#recordEvent(RecordEventRequest)",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:BehaviourService|CONTAINS|m:BehaviourService#recordInvolvement(UUID,UUID,String)",
+    "src" : "comp:BehaviourService",
+    "dst" : "m:BehaviourService#recordInvolvement(UUID,UUID,String)",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:BehaviourService|CONTAINS|m:BehaviourService#openEpisode(UUID,String,TemporalValue)",
+    "src" : "comp:BehaviourService",
+    "dst" : "m:BehaviourService#openEpisode(UUID,String,TemporalValue)",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:TimelineService|CONTAINS|m:TimelineService#assemble(UUID)",
+    "src" : "comp:TimelineService",
+    "dst" : "m:TimelineService#assemble(UUID)",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:MoodShiftDetector|CONTAINS|m:MoodShiftDetector#detect(UUID)",
+    "src" : "comp:MoodShiftDetector",
+    "dst" : "m:MoodShiftDetector#detect(UUID)",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:EventRepository|CONTAINS|m:EventRepository#save(Event)",
+    "src" : "comp:EventRepository",
+    "dst" : "m:EventRepository#save(Event)",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:EventRepository|CONTAINS|m:EventRepository#findByPerson(UUID)",
+    "src" : "comp:EventRepository",
+    "dst" : "m:EventRepository#findByPerson(UUID)",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:BehaviourRepository|CONTAINS|m:BehaviourRepository#save(BehaviourEpisode)",
+    "src" : "comp:BehaviourRepository",
+    "dst" : "m:BehaviourRepository#save(BehaviourEpisode)",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:BehaviourRepository|CONTAINS|m:BehaviourRepository#findByPerson(UUID)",
+    "src" : "comp:BehaviourRepository",
+    "dst" : "m:BehaviourRepository#findByPerson(UUID)",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:MoodShiftRepository|CONTAINS|m:MoodShiftRepository#save(MoodShift)",
+    "src" : "comp:MoodShiftRepository",
+    "dst" : "m:MoodShiftRepository#save(MoodShift)",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:BehaviourService|CONTAINS|type:Event",
+    "src" : "comp:BehaviourService",
+    "dst" : "type:Event",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:BehaviourService|CONTAINS|type:Action",
+    "src" : "comp:BehaviourService",
+    "dst" : "type:Action",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:BehaviourService|CONTAINS|type:Involvement",
+    "src" : "comp:BehaviourService",
+    "dst" : "type:Involvement",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:BehaviourService|CONTAINS|type:BehaviourEpisode",
+    "src" : "comp:BehaviourService",
+    "dst" : "type:BehaviourEpisode",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:MoodShiftDetector|CONTAINS|type:MoodShift",
+    "src" : "comp:MoodShiftDetector",
+    "dst" : "type:MoodShift",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:TimelineController|CONTAINS|type:RecordEventRequest",
+    "src" : "comp:TimelineController",
+    "dst" : "type:RecordEventRequest",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:TimelineService|CONTAINS|type:PersonTimeline",
+    "src" : "comp:TimelineService",
+    "dst" : "type:PersonTimeline",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:Event|CONTAINS|field:Event.id",
+    "src" : "type:Event",
+    "dst" : "field:Event.id",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:Event|CONTAINS|field:Event.title",
+    "src" : "type:Event",
+    "dst" : "field:Event.title",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:Event|CONTAINS|field:Event.occurredAt",
+    "src" : "type:Event",
+    "dst" : "field:Event.occurredAt",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:Event|CONTAINS|field:Event.location",
+    "src" : "type:Event",
+    "dst" : "field:Event.location",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:Event|CONTAINS|field:Event.noteId",
+    "src" : "type:Event",
+    "dst" : "field:Event.noteId",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:Action|CONTAINS|field:Action.actorId",
+    "src" : "type:Action",
+    "dst" : "field:Action.actorId",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:Action|CONTAINS|field:Action.verb",
+    "src" : "type:Action",
+    "dst" : "field:Action.verb",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:Action|CONTAINS|field:Action.occurredAt",
+    "src" : "type:Action",
+    "dst" : "field:Action.occurredAt",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:Involvement|CONTAINS|field:Involvement.personId",
+    "src" : "type:Involvement",
+    "dst" : "field:Involvement.personId",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:Involvement|CONTAINS|field:Involvement.role",
+    "src" : "type:Involvement",
+    "dst" : "field:Involvement.role",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:BehaviourEpisode|CONTAINS|field:BehaviourEpisode.personId",
+    "src" : "type:BehaviourEpisode",
+    "dst" : "field:BehaviourEpisode.personId",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:BehaviourEpisode|CONTAINS|field:BehaviourEpisode.label",
+    "src" : "type:BehaviourEpisode",
+    "dst" : "field:BehaviourEpisode.label",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:BehaviourEpisode|CONTAINS|field:BehaviourEpisode.period",
+    "src" : "type:BehaviourEpisode",
+    "dst" : "field:BehaviourEpisode.period",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:BehaviourEpisode|CONTAINS|field:BehaviourEpisode.intensity",
+    "src" : "type:BehaviourEpisode",
+    "dst" : "field:BehaviourEpisode.intensity",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:MoodShift|CONTAINS|field:MoodShift.personId",
+    "src" : "type:MoodShift",
+    "dst" : "field:MoodShift.personId",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:MoodShift|CONTAINS|field:MoodShift.fromMood",
+    "src" : "type:MoodShift",
+    "dst" : "field:MoodShift.fromMood",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:MoodShift|CONTAINS|field:MoodShift.toMood",
+    "src" : "type:MoodShift",
+    "dst" : "field:MoodShift.toMood",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:MoodShift|CONTAINS|field:MoodShift.detectedAt",
+    "src" : "type:MoodShift",
+    "dst" : "field:MoodShift.detectedAt",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:MoodShift|CONTAINS|field:MoodShift.triggerEventId",
+    "src" : "type:MoodShift",
+    "dst" : "field:MoodShift.triggerEventId",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:RecordEventRequest|CONTAINS|field:RecordEventRequest.title",
+    "src" : "type:RecordEventRequest",
+    "dst" : "field:RecordEventRequest.title",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:RecordEventRequest|CONTAINS|field:RecordEventRequest.occurredAt",
+    "src" : "type:RecordEventRequest",
+    "dst" : "field:RecordEventRequest.occurredAt",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:RecordEventRequest|CONTAINS|field:RecordEventRequest.involved",
+    "src" : "type:RecordEventRequest",
+    "dst" : "field:RecordEventRequest.involved",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:PersonTimeline|CONTAINS|field:PersonTimeline.personId",
+    "src" : "type:PersonTimeline",
+    "dst" : "field:PersonTimeline.personId",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "type:PersonTimeline|CONTAINS|field:PersonTimeline.entries",
+    "src" : "type:PersonTimeline",
+    "dst" : "field:PersonTimeline.entries",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:db|CONTAINS|tbl:event",
+    "src" : "cont:db",
+    "dst" : "tbl:event",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:db|CONTAINS|tbl:action",
+    "src" : "cont:db",
+    "dst" : "tbl:action",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:db|CONTAINS|tbl:involvement",
+    "src" : "cont:db",
+    "dst" : "tbl:involvement",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:db|CONTAINS|tbl:behaviour_episode",
+    "src" : "cont:db",
+    "dst" : "tbl:behaviour_episode",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "cont:db|CONTAINS|tbl:mood_shift",
+    "src" : "cont:db",
+    "dst" : "tbl:mood_shift",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:event|CONTAINS|col:event.id",
+    "src" : "tbl:event",
+    "dst" : "col:event.id",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:event|CONTAINS|col:event.kind",
+    "src" : "tbl:event",
+    "dst" : "col:event.kind",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:event|CONTAINS|col:event.title",
+    "src" : "tbl:event",
+    "dst" : "col:event.title",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:event|CONTAINS|col:event.occurred_at",
+    "src" : "tbl:event",
+    "dst" : "col:event.occurred_at",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:event|CONTAINS|col:event.occurred_kind",
+    "src" : "tbl:event",
+    "dst" : "col:event.occurred_kind",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:event|CONTAINS|col:event.location",
+    "src" : "tbl:event",
+    "dst" : "col:event.location",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:event|CONTAINS|col:event.note_id",
+    "src" : "tbl:event",
+    "dst" : "col:event.note_id",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:action|CONTAINS|col:action.id",
+    "src" : "tbl:action",
+    "dst" : "col:action.id",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:action|CONTAINS|col:action.event_id",
+    "src" : "tbl:action",
+    "dst" : "col:action.event_id",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:action|CONTAINS|col:action.actor_person_id",
+    "src" : "tbl:action",
+    "dst" : "col:action.actor_person_id",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:action|CONTAINS|col:action.verb",
+    "src" : "tbl:action",
+    "dst" : "col:action.verb",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:action|CONTAINS|col:action.occurred_at",
+    "src" : "tbl:action",
+    "dst" : "col:action.occurred_at",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:involvement|CONTAINS|col:involvement.id",
+    "src" : "tbl:involvement",
+    "dst" : "col:involvement.id",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:involvement|CONTAINS|col:involvement.person_id",
+    "src" : "tbl:involvement",
+    "dst" : "col:involvement.person_id",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:involvement|CONTAINS|col:involvement.event_id",
+    "src" : "tbl:involvement",
+    "dst" : "col:involvement.event_id",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:involvement|CONTAINS|col:involvement.role",
+    "src" : "tbl:involvement",
+    "dst" : "col:involvement.role",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:behaviour_episode|CONTAINS|col:behaviour_episode.id",
+    "src" : "tbl:behaviour_episode",
+    "dst" : "col:behaviour_episode.id",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:behaviour_episode|CONTAINS|col:behaviour_episode.person_id",
+    "src" : "tbl:behaviour_episode",
+    "dst" : "col:behaviour_episode.person_id",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:behaviour_episode|CONTAINS|col:behaviour_episode.label",
+    "src" : "tbl:behaviour_episode",
+    "dst" : "col:behaviour_episode.label",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:behaviour_episode|CONTAINS|col:behaviour_episode.started_at",
+    "src" : "tbl:behaviour_episode",
+    "dst" : "col:behaviour_episode.started_at",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:behaviour_episode|CONTAINS|col:behaviour_episode.ended_at",
+    "src" : "tbl:behaviour_episode",
+    "dst" : "col:behaviour_episode.ended_at",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:behaviour_episode|CONTAINS|col:behaviour_episode.intensity",
+    "src" : "tbl:behaviour_episode",
+    "dst" : "col:behaviour_episode.intensity",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:behaviour_episode|CONTAINS|col:behaviour_episode.baseline_mood",
+    "src" : "tbl:behaviour_episode",
+    "dst" : "col:behaviour_episode.baseline_mood",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:mood_shift|CONTAINS|col:mood_shift.id",
+    "src" : "tbl:mood_shift",
+    "dst" : "col:mood_shift.id",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:mood_shift|CONTAINS|col:mood_shift.person_id",
+    "src" : "tbl:mood_shift",
+    "dst" : "col:mood_shift.person_id",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:mood_shift|CONTAINS|col:mood_shift.episode_id",
+    "src" : "tbl:mood_shift",
+    "dst" : "col:mood_shift.episode_id",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:mood_shift|CONTAINS|col:mood_shift.from_mood",
+    "src" : "tbl:mood_shift",
+    "dst" : "col:mood_shift.from_mood",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:mood_shift|CONTAINS|col:mood_shift.to_mood",
+    "src" : "tbl:mood_shift",
+    "dst" : "col:mood_shift.to_mood",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:mood_shift|CONTAINS|col:mood_shift.detected_at",
+    "src" : "tbl:mood_shift",
+    "dst" : "col:mood_shift.detected_at",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:mood_shift|CONTAINS|col:mood_shift.confidence",
+    "src" : "tbl:mood_shift",
+    "dst" : "col:mood_shift.confidence",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "tbl:mood_shift|CONTAINS|col:mood_shift.trigger_event_id",
+    "src" : "tbl:mood_shift",
+    "dst" : "col:mood_shift.trigger_event_id",
+    "kind" : "CONTAINS",
+    "description" : "contains",
+    "metadata" : { }
+  }, {
+    "id" : "comp:EventRepository|PERSISTS_TO|tbl:event",
+    "src" : "comp:EventRepository",
+    "dst" : "tbl:event",
+    "kind" : "PERSISTS_TO",
+    "description" : "EventRepository persists events.",
+    "metadata" : {
+      "cardinality" : "1:N"
+    }
+  }, {
+    "id" : "comp:EventRepository|PERSISTS_TO|tbl:action",
+    "src" : "comp:EventRepository",
+    "dst" : "tbl:action",
+    "kind" : "PERSISTS_TO",
+    "description" : "EventRepository persists actions within events.",
+    "metadata" : {
+      "cardinality" : "1:N"
+    }
+  }, {
+    "id" : "comp:EventRepository|PERSISTS_TO|tbl:involvement",
+    "src" : "comp:EventRepository",
+    "dst" : "tbl:involvement",
+    "kind" : "PERSISTS_TO",
+    "description" : "EventRepository persists who was involved.",
+    "metadata" : {
+      "cardinality" : "1:N"
+    }
+  }, {
+    "id" : "comp:BehaviourRepository|PERSISTS_TO|tbl:behaviour_episode",
+    "src" : "comp:BehaviourRepository",
+    "dst" : "tbl:behaviour_episode",
+    "kind" : "PERSISTS_TO",
+    "description" : "BehaviourRepository persists behaviour episodes.",
+    "metadata" : {
+      "cardinality" : "1:N"
+    }
+  }, {
+    "id" : "comp:MoodShiftRepository|PERSISTS_TO|tbl:mood_shift",
+    "src" : "comp:MoodShiftRepository",
+    "dst" : "tbl:mood_shift",
+    "kind" : "PERSISTS_TO",
+    "description" : "MoodShiftRepository persists detected mood shifts.",
+    "metadata" : {
+      "cardinality" : "1:N"
+    }
+  }, {
+    "id" : "col:event.note_id|FK_TO|col:note.id",
+    "src" : "col:event.note_id",
+    "dst" : "col:note.id",
+    "kind" : "FK_TO",
+    "description" : "event.note_id references note.id.",
+    "metadata" : {
+      "cardinality" : "N:1"
+    }
+  }, {
+    "id" : "col:action.event_id|FK_TO|col:event.id",
+    "src" : "col:action.event_id",
+    "dst" : "col:event.id",
+    "kind" : "FK_TO",
+    "description" : "action.event_id references event.id.",
+    "metadata" : {
+      "cardinality" : "N:1"
+    }
+  }, {
+    "id" : "col:action.actor_person_id|FK_TO|col:person.id",
+    "src" : "col:action.actor_person_id",
+    "dst" : "col:person.id",
+    "kind" : "FK_TO",
+    "description" : "action.actor_person_id references person.id.",
+    "metadata" : {
+      "cardinality" : "N:1"
+    }
+  }, {
+    "id" : "col:involvement.person_id|FK_TO|col:person.id",
+    "src" : "col:involvement.person_id",
+    "dst" : "col:person.id",
+    "kind" : "FK_TO",
+    "description" : "involvement.person_id references person.id.",
+    "metadata" : {
+      "cardinality" : "N:1"
+    }
+  }, {
+    "id" : "col:involvement.event_id|FK_TO|col:event.id",
+    "src" : "col:involvement.event_id",
+    "dst" : "col:event.id",
+    "kind" : "FK_TO",
+    "description" : "involvement.event_id references event.id.",
+    "metadata" : {
+      "cardinality" : "N:1"
+    }
+  }, {
+    "id" : "col:behaviour_episode.person_id|FK_TO|col:person.id",
+    "src" : "col:behaviour_episode.person_id",
+    "dst" : "col:person.id",
+    "kind" : "FK_TO",
+    "description" : "behaviour_episode.person_id references person.id.",
+    "metadata" : {
+      "cardinality" : "N:1"
+    }
+  }, {
+    "id" : "col:mood_shift.person_id|FK_TO|col:person.id",
+    "src" : "col:mood_shift.person_id",
+    "dst" : "col:person.id",
+    "kind" : "FK_TO",
+    "description" : "mood_shift.person_id references person.id.",
+    "metadata" : {
+      "cardinality" : "N:1"
+    }
+  }, {
+    "id" : "col:mood_shift.episode_id|FK_TO|col:behaviour_episode.id",
+    "src" : "col:mood_shift.episode_id",
+    "dst" : "col:behaviour_episode.id",
+    "kind" : "FK_TO",
+    "description" : "mood_shift.episode_id references behaviour_episode.id.",
+    "metadata" : {
+      "cardinality" : "N:1"
+    }
+  }, {
+    "id" : "col:mood_shift.trigger_event_id|FK_TO|col:event.id",
+    "src" : "col:mood_shift.trigger_event_id",
+    "dst" : "col:event.id",
+    "kind" : "FK_TO",
+    "description" : "mood_shift.trigger_event_id references event.id.",
+    "metadata" : {
+      "cardinality" : "N:1"
+    }
+  }, {
+    "id" : "mig:V2__behaviour|EVOLVES|tbl:event",
+    "src" : "mig:V2__behaviour",
+    "dst" : "tbl:event",
+    "kind" : "EVOLVES",
+    "description" : "V2 creates the event table.",
+    "metadata" : {
+      "cardinality" : "1:N"
+    }
+  }, {
+    "id" : "mig:V2__behaviour|EVOLVES|tbl:action",
+    "src" : "mig:V2__behaviour",
+    "dst" : "tbl:action",
+    "kind" : "EVOLVES",
+    "description" : "V2 creates the action table.",
+    "metadata" : {
+      "cardinality" : "1:N"
+    }
+  }, {
+    "id" : "mig:V2__behaviour|EVOLVES|tbl:involvement",
+    "src" : "mig:V2__behaviour",
+    "dst" : "tbl:involvement",
+    "kind" : "EVOLVES",
+    "description" : "V2 creates the involvement table.",
+    "metadata" : {
+      "cardinality" : "1:N"
+    }
+  }, {
+    "id" : "mig:V2__behaviour|EVOLVES|tbl:behaviour_episode",
+    "src" : "mig:V2__behaviour",
+    "dst" : "tbl:behaviour_episode",
+    "kind" : "EVOLVES",
+    "description" : "V2 creates the behaviour_episode table.",
+    "metadata" : {
+      "cardinality" : "1:N"
+    }
+  }, {
+    "id" : "mig:V2__behaviour|EVOLVES|tbl:mood_shift",
+    "src" : "mig:V2__behaviour",
+    "dst" : "tbl:mood_shift",
+    "kind" : "EVOLVES",
+    "description" : "V2 creates the mood_shift table.",
+    "metadata" : {
+      "cardinality" : "1:N"
+    }
+  }, {
+    "id" : "m:TimelineController#timeline(UUID)|CALLS|m:TimelineService#assemble(UUID)",
+    "src" : "m:TimelineController#timeline(UUID)",
+    "dst" : "m:TimelineService#assemble(UUID)",
+    "kind" : "CALLS",
+    "description" : "calls",
+    "metadata" : {
+      "argTypes" : [ "UUID" ]
+    }
+  }, {
+    "id" : "m:TimelineController#moodShifts(UUID)|CALLS|m:MoodShiftDetector#detect(UUID)",
+    "src" : "m:TimelineController#moodShifts(UUID)",
+    "dst" : "m:MoodShiftDetector#detect(UUID)",
+    "kind" : "CALLS",
+    "description" : "calls",
+    "metadata" : {
+      "argTypes" : [ "UUID" ]
+    }
+  }, {
+    "id" : "m:TimelineController#recordEvent(RecordEventRequest)|CALLS|m:BehaviourService#recordEvent(RecordEventRequest)",
+    "src" : "m:TimelineController#recordEvent(RecordEventRequest)",
+    "dst" : "m:BehaviourService#recordEvent(RecordEventRequest)",
+    "kind" : "CALLS",
+    "description" : "calls",
+    "metadata" : {
+      "argTypes" : [ "RecordEventRequest" ]
+    }
+  }, {
+    "id" : "m:BehaviourService#recordEvent(RecordEventRequest)|CALLS|m:EventRepository#save(Event)",
+    "src" : "m:BehaviourService#recordEvent(RecordEventRequest)",
+    "dst" : "m:EventRepository#save(Event)",
+    "kind" : "CALLS",
+    "description" : "calls",
+    "metadata" : {
+      "argTypes" : [ "Event" ]
+    }
+  }, {
+    "id" : "m:BehaviourService#recordEvent(RecordEventRequest)|CALLS|m:BehaviourService#recordInvolvement(UUID,UUID,String)",
+    "src" : "m:BehaviourService#recordEvent(RecordEventRequest)",
+    "dst" : "m:BehaviourService#recordInvolvement(UUID,UUID,String)",
+    "kind" : "CALLS",
+    "description" : "calls",
+    "metadata" : {
+      "argTypes" : [ "UUID", "UUID", "String" ]
+    }
+  }, {
+    "id" : "m:BehaviourService#openEpisode(UUID,String,TemporalValue)|CALLS|m:BehaviourRepository#save(BehaviourEpisode)",
+    "src" : "m:BehaviourService#openEpisode(UUID,String,TemporalValue)",
+    "dst" : "m:BehaviourRepository#save(BehaviourEpisode)",
+    "kind" : "CALLS",
+    "description" : "calls",
+    "metadata" : {
+      "argTypes" : [ "BehaviourEpisode" ]
+    }
+  }, {
+    "id" : "m:TimelineService#assemble(UUID)|CALLS|m:EventRepository#findByPerson(UUID)",
+    "src" : "m:TimelineService#assemble(UUID)",
+    "dst" : "m:EventRepository#findByPerson(UUID)",
+    "kind" : "CALLS",
+    "description" : "calls",
+    "metadata" : {
+      "argTypes" : [ "UUID" ]
+    }
+  }, {
+    "id" : "m:TimelineService#assemble(UUID)|CALLS|m:BehaviourRepository#findByPerson(UUID)",
+    "src" : "m:TimelineService#assemble(UUID)",
+    "dst" : "m:BehaviourRepository#findByPerson(UUID)",
+    "kind" : "CALLS",
+    "description" : "calls",
+    "metadata" : {
+      "argTypes" : [ "UUID" ]
+    }
+  }, {
+    "id" : "m:MoodShiftDetector#detect(UUID)|CALLS|m:BehaviourRepository#findByPerson(UUID)",
+    "src" : "m:MoodShiftDetector#detect(UUID)",
+    "dst" : "m:BehaviourRepository#findByPerson(UUID)",
+    "kind" : "CALLS",
+    "description" : "calls",
+    "metadata" : {
+      "argTypes" : [ "UUID" ]
+    }
+  }, {
+    "id" : "m:MoodShiftDetector#detect(UUID)|CALLS|m:MoodShiftRepository#save(MoodShift)",
+    "src" : "m:MoodShiftDetector#detect(UUID)",
+    "dst" : "m:MoodShiftRepository#save(MoodShift)",
+    "kind" : "CALLS",
+    "description" : "calls",
+    "metadata" : {
+      "argTypes" : [ "MoodShift" ]
+    }
+  }, {
+    "id" : "type:Involvement|DEPENDS_ON|type:Person",
+    "src" : "type:Involvement",
+    "dst" : "type:Person",
+    "kind" : "DEPENDS_ON",
+    "description" : "involvement names WHO was involved.",
+    "metadata" : { }
+  }, {
+    "id" : "type:Involvement|DEPENDS_ON|type:Event",
+    "src" : "type:Involvement",
+    "dst" : "type:Event",
+    "kind" : "DEPENDS_ON",
+    "description" : "involvement is in an event.",
+    "metadata" : { }
+  }, {
+    "id" : "type:Action|DEPENDS_ON|type:Person",
+    "src" : "type:Action",
+    "dst" : "type:Person",
+    "kind" : "DEPENDS_ON",
+    "description" : "an action has an actor (person).",
+    "metadata" : { }
+  }, {
+    "id" : "type:Action|DEPENDS_ON|type:Event",
+    "src" : "type:Action",
+    "dst" : "type:Event",
+    "kind" : "DEPENDS_ON",
+    "description" : "an action happens within an event.",
+    "metadata" : { }
+  }, {
+    "id" : "type:BehaviourEpisode|DEPENDS_ON|type:Person",
+    "src" : "type:BehaviourEpisode",
+    "dst" : "type:Person",
+    "kind" : "DEPENDS_ON",
+    "description" : "an episode belongs to a person.",
+    "metadata" : { }
+  }, {
+    "id" : "type:MoodShift|DEPENDS_ON|type:Person",
+    "src" : "type:MoodShift",
+    "dst" : "type:Person",
+    "kind" : "DEPENDS_ON",
+    "description" : "a mood shift belongs to a person.",
+    "metadata" : { }
+  }, {
+    "id" : "type:MoodShift|DEPENDS_ON|type:BehaviourEpisode",
+    "src" : "type:MoodShift",
+    "dst" : "type:BehaviourEpisode",
+    "kind" : "DEPENDS_ON",
+    "description" : "a mood shift follows an episode.",
+    "metadata" : { }
+  }, {
+    "id" : "type:MoodShift|DEPENDS_ON|type:Event",
+    "src" : "type:MoodShift",
+    "dst" : "type:Event",
+    "kind" : "DEPENDS_ON",
+    "description" : "a mood shift may be triggered by an event.",
+    "metadata" : { }
+  }, {
+    "id" : "comp:BehaviourService|IMPLEMENTS|req:R9",
+    "src" : "comp:BehaviourService",
+    "dst" : "req:R9",
+    "kind" : "IMPLEMENTS",
+    "description" : "implements requirement",
+    "metadata" : { }
+  }, {
+    "id" : "m:TimelineController#recordEvent(RecordEventRequest)|IMPLEMENTS|req:R9",
+    "src" : "m:TimelineController#recordEvent(RecordEventRequest)",
+    "dst" : "req:R9",
+    "kind" : "IMPLEMENTS",
+    "description" : "implements requirement",
+    "metadata" : { }
+  }, {
+    "id" : "type:Event|IMPLEMENTS|req:R9",
+    "src" : "type:Event",
+    "dst" : "req:R9",
+    "kind" : "IMPLEMENTS",
+    "description" : "implements requirement",
+    "metadata" : { }
+  }, {
+    "id" : "type:Involvement|IMPLEMENTS|req:R9",
+    "src" : "type:Involvement",
+    "dst" : "req:R9",
+    "kind" : "IMPLEMENTS",
+    "description" : "implements requirement",
+    "metadata" : { }
+  }, {
+    "id" : "comp:BehaviourService|IMPLEMENTS|req:R10",
+    "src" : "comp:BehaviourService",
+    "dst" : "req:R10",
+    "kind" : "IMPLEMENTS",
+    "description" : "implements requirement",
+    "metadata" : { }
+  }, {
+    "id" : "type:BehaviourEpisode|IMPLEMENTS|req:R10",
+    "src" : "type:BehaviourEpisode",
+    "dst" : "req:R10",
+    "kind" : "IMPLEMENTS",
+    "description" : "implements requirement",
+    "metadata" : { }
+  }, {
+    "id" : "m:BehaviourService#openEpisode(UUID,String,TemporalValue)|IMPLEMENTS|req:R10",
+    "src" : "m:BehaviourService#openEpisode(UUID,String,TemporalValue)",
+    "dst" : "req:R10",
+    "kind" : "IMPLEMENTS",
+    "description" : "implements requirement",
+    "metadata" : { }
+  }, {
+    "id" : "comp:MoodShiftDetector|IMPLEMENTS|req:R11",
+    "src" : "comp:MoodShiftDetector",
+    "dst" : "req:R11",
+    "kind" : "IMPLEMENTS",
+    "description" : "implements requirement",
+    "metadata" : { }
+  }, {
+    "id" : "type:MoodShift|IMPLEMENTS|req:R11",
+    "src" : "type:MoodShift",
+    "dst" : "req:R11",
+    "kind" : "IMPLEMENTS",
+    "description" : "implements requirement",
+    "metadata" : { }
+  }, {
+    "id" : "m:MoodShiftDetector#detect(UUID)|IMPLEMENTS|req:R11",
+    "src" : "m:MoodShiftDetector#detect(UUID)",
+    "dst" : "req:R11",
+    "kind" : "IMPLEMENTS",
+    "description" : "implements requirement",
+    "metadata" : { }
+  }, {
+    "id" : "comp:TimelineService|IMPLEMENTS|req:R12",
+    "src" : "comp:TimelineService",
+    "dst" : "req:R12",
+    "kind" : "IMPLEMENTS",
+    "description" : "implements requirement",
+    "metadata" : { }
+  }, {
+    "id" : "m:TimelineController#timeline(UUID)|IMPLEMENTS|req:R12",
+    "src" : "m:TimelineController#timeline(UUID)",
+    "dst" : "req:R12",
+    "kind" : "IMPLEMENTS",
+    "description" : "implements requirement",
+    "metadata" : { }
+  }, {
+    "id" : "m:TimelineService#assemble(UUID)|IMPLEMENTS|req:R12",
+    "src" : "m:TimelineService#assemble(UUID)",
+    "dst" : "req:R12",
+    "kind" : "IMPLEMENTS",
+    "description" : "implements requirement",
+    "metadata" : { }
+  } ]
+}

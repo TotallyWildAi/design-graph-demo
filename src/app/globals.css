@@ -2,25 +2,124 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1e293b;
+
+  /* Totally Wild AI brand tokens (from the product's tokens.css) */
+  --iris: #6e5ccc;
+  --iris-soft: rgba(110, 92, 204, 0.1);
+
+  --panel-bg: #ffffff;
+  --canvas-bg: #f6f7fb;
+  --canvas-dot: #d8dce8;
+  --border: #e2e8f0;
+  --hover: #f1f5f9;
+  --text: #1e293b;
+  --text-soft: #475569;
+  --muted: #7c8798;
+  --amber: #d97706;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-jakarta);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0e1013;
+    --foreground: #e2e8f0;
+    --panel-bg: #16181d;
+    --canvas-bg: #0e1013;
+    --canvas-dot: #262a33;
+    --border: #262a33;
+    --hover: #1d2027;
+    --text: #e2e8f0;
+    --text-soft: #b6c0cf;
+    --muted: #7c8798;
+    --iris-soft: rgba(110, 92, 204, 0.22);
   }
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  font-family: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+}
+
+.panel-heading {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.chip-btn {
+  font-size: 9.5px;
+  padding: 2px 7px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+.chip-btn:hover {
+  border-color: var(--iris);
+  color: var(--iris);
+}
+
+/* Node cards always render ABOVE the edge layer — dense connection lines pass
+   underneath cards instead of striking through them. */
+.react-flow__edges,
+.react-flow svg.react-flow__edges {
+  z-index: 0 !important;
+}
+.react-flow__node {
+  z-index: 1 !important;
+}
+.react-flow__edgelabel-renderer {
+  z-index: 2 !important;
+}
+.react-flow__node:hover {
+  cursor: pointer;
+}
+
+/* Mermaid diagram polish: bolder lane titles, softer edge strokes,
+   cards get a faint lift so they read above the connectors. */
+.mermaid-host svg .cluster-label text {
+  font-weight: 700;
+  fill: #64748b;
+}
+.mermaid-host svg .edgePaths path {
+  stroke: #a3adc2;
+  stroke-width: 1.1px;
+}
+.mermaid-host svg .node rect,
+.mermaid-host svg .node polygon {
+  filter: drop-shadow(0 1px 1.5px rgba(15, 23, 42, 0.18));
+}
+
+/* Vertical zoom slider on the diagram pan/zoom controls */
+.diagram-zoom-slider {
+  writing-mode: vertical-lr;
+  direction: rtl;
+  width: 14px;
+  height: 96px;
+  accent-color: var(--iris);
+  cursor: pointer;
+}
+
+/* React Flow chrome that should follow the theme */
+.react-flow__controls {
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.12);
+}
+.react-flow__controls-button {
+  background: var(--panel-bg);
+  border-bottom: 1px solid var(--border);
+  fill: var(--text-soft);
+}
+.react-flow__minimap {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
 }
