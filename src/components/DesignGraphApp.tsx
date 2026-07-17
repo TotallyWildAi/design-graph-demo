@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { track } from "@vercel/analytics";
 import type { DGData } from "@/lib/types";
 import { buildIndex, type FilterState } from "@/lib/graph";
 import { timelineManager } from "@/data/timelineManager";
@@ -176,7 +177,11 @@ export function DesignGraphApp() {
           return (
             <button
               key={t.key}
-              onClick={() => live && setTab(t.key)}
+              onClick={() => {
+                if (!live) return;
+                setTab(t.key);
+                track("tab-opened", { tab: t.key, project: projectId });
+              }}
               disabled={!live}
               title={live ? undefined : "Available in the full product"}
               className={`text-[11px] px-2.5 py-1 rounded-md font-medium ${
