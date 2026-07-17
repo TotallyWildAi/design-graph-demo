@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PitchInfographic } from "@/components/PitchInfographic";
+import { ErpUseCase } from "@/components/ErpUseCase";
 
 export const metadata = {
   title: "Totally Wild AI — Own the architecture, not the output",
@@ -210,6 +211,9 @@ export default function PitchPage() {
             Open the Design Graph →
           </Link>
         </section>
+
+        {/* ---------------------------------------------- ERP use case */}
+        <ErpUseCase />
 
         {/* -------------------------------------------------- the room */}
         <section className="py-10 border-t border-[var(--border)]">
