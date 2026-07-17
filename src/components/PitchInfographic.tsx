@@ -3,20 +3,62 @@
 import { useEffect, useState, type CSSProperties } from "react";
 
 /** Pipeline infographic — a one-line strip in the page flow; clicking opens a
- * lightbox: the full infographic zooms in centred while the page behind dims
- * and blurs. The stage light-up sequence plays as the reveal. Escape / ✕ /
- * backdrop click closes. prefers-reduced-motion gets the finished state. */
-
-const STAGES: Array<{ icon: string; name: string; sub: string; color: string; note: string }> = [
-  { icon: "👤", name: "Human brief", sub: "goals · decisions", color: "#64748b", note: "captured by" },
-  { icon: "🤖", name: "BA agent", sub: "the intent", color: "#a855f7", note: "feeds" },
-  { icon: "🏛️", name: "Architect", sub: "proposes the graph", color: "#8b5cf6", note: "through the" },
-  { icon: "🛡️", name: "Verification gate", sub: "hard assertions — rejects contradictions", color: "#dc2626", note: "locks" },
-];
-
-const MINI = ["👤", "🤖", "🏛️", "🛡️", "🕸️", "⚙️", "✅"];
+ * lightbox: the full three-tier infographic zooms in centred while the page
+ * behind dims and blurs. The stage light-up sequence plays as the reveal.
+ * Escape / ✕ / backdrop click closes. prefers-reduced-motion gets the
+ * finished state instantly. */
 
 const step = (i: number): CSSProperties => ({ "--ig-i": i } as CSSProperties);
+
+/** Opaque pastel — alpha fills would let the blurred page ghost through. */
+const pastel = (hex: string, pct = 10) => `color-mix(in srgb, ${hex} ${pct}%, var(--panel-bg))`;
+
+const MINI = ["👤", "🤖", "🏛️", "🛡️", "🕸️", "👩‍💻", "✅"];
+
+const TIER1: Array<{ icon: string; name: string; sub: string; color: string; note?: string }> = [
+  { icon: "👤", name: "Human brief", sub: "goals · decisions", color: "#64748b", note: "captured by" },
+  { icon: "🤖", name: "BA agent", sub: "captures the intent", color: "#a855f7", note: "feeds" },
+  { icon: "🏛️", name: "Architect", sub: "proposes the graph", color: "#8b5cf6", note: "through the" },
+  { icon: "🛡️", name: "Verification gate", sub: "hard assertions — rejects anything that contradicts them", color: "#dc2626" },
+];
+
+/** What the graph contains — the demo's node-kind vocabulary. */
+const NODE_CHIPS: Array<{ icon: string; label: string; color: string }> = [
+  { icon: "📦", label: "services", color: "#3b82f6" },
+  { icon: "🧩", label: "components", color: "#10b981" },
+  { icon: "🔷", label: "classes", color: "#f59e0b" },
+  { icon: "⚙️", label: "methods", color: "#6366f1" },
+  { icon: "🗄️", label: "tables", color: "#e11d48" },
+  { icon: "📋", label: "contracts", color: "#fb923c" },
+  { icon: "🌐", label: "endpoints", color: "#06b6d4" },
+  { icon: "📌", label: "requirements", color: "#a855f7" },
+];
+
+const ENGINEERS: Array<{ icon: string; line: string }> = [
+  { icon: "👩‍💻", line: "queries the graphAPI for exact context" },
+  { icon: "🧑‍💻", line: "writes code until the spec’s tests pass" },
+  { icon: "👨‍💻", line: "never greps — walks the edges and asks" },
+];
+
+/** Large emoji arrow between stages — horizontal on desktop, down when stacked. */
+function Arrow({ i, label, down = false }: { i: number; label?: string; down?: boolean }) {
+  return (
+    <div
+      className="ig-step shrink-0 flex sm:flex-col items-center justify-center gap-1 text-[var(--muted)]"
+      style={step(i)}
+    >
+      {down ? (
+        <span className="text-[24px] leading-none">⬇️</span>
+      ) : (
+        <>
+          <span className="hidden sm:block text-[24px] leading-none">➡️</span>
+          <span className="sm:hidden text-[24px] leading-none">⬇️</span>
+        </>
+      )}
+      {label && <span className="text-[10px] font-medium whitespace-nowrap">{label}</span>}
+    </div>
+  );
+}
 
 export function PitchInfographic() {
   const [open, setOpen] = useState(false);
@@ -88,107 +130,153 @@ export function PitchInfographic() {
               onClick={() => setOpen(false)}
               title="Close (Esc)"
               autoFocus
-              className="absolute top-3 right-4 w-7 h-7 grid place-items-center rounded-full border border-[var(--border)] text-[13px] text-[var(--muted)] hover:border-[var(--iris)] hover:text-[var(--iris)]"
+              className="absolute top-3 right-4 w-7 h-7 grid place-items-center rounded-full border border-[var(--border)] text-[13px] text-[var(--muted)] hover:border-[var(--iris)] hover:text-[var(--iris)] z-10"
             >
               ✕
             </button>
 
-            {/* stage row */}
+            {/* ================= Tier 1 — intent to locked graph ================= */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
-              {STAGES.map((s, i) => (
+              {TIER1.map((s, i) => (
                 <div key={s.name} className="flex flex-col sm:flex-row items-center gap-2.5 sm:flex-1">
                   <div
-                    className="ig-step w-full rounded-lg border px-3 py-2.5 text-center"
-                    style={{
-                      ...step(i),
-                      borderColor: s.color,
-                      background: `color-mix(in srgb, ${s.color} 10%, var(--panel-bg))`,
-                    }}
+                    className="ig-step w-full rounded-xl border px-3 py-3 text-center"
+                    style={{ ...step(i), borderColor: s.color, background: pastel(s.color) }}
                   >
-                    <div className="text-[18px] leading-none">{s.icon}</div>
-                    <div className="mt-1 text-[13px] font-bold leading-tight">{s.name}</div>
-                    <div className="text-[10.5px] text-[var(--muted)] leading-tight">{s.sub}</div>
+                    <div className="text-[22px] leading-none">{s.icon}</div>
+                    <div className="mt-1.5 text-[13.5px] font-bold leading-tight">{s.name}</div>
+                    <div className="mt-0.5 text-[10.5px] text-[var(--muted)] leading-snug">{s.sub}</div>
                   </div>
-                  <div
-                    className="ig-step shrink-0 text-[var(--muted)] text-[10.5px] flex sm:flex-col items-center gap-0.5"
-                    style={step(i + 0.4)}
-                  >
-                    <span className="hidden sm:block text-[15px] leading-none">→</span>
-                    <span className="sm:hidden text-[15px] leading-none">↓</span>
-                    <span className="whitespace-nowrap">{s.note}</span>
-                  </div>
+                  {s.note !== undefined ? <Arrow i={i + 0.5} label={s.note} /> : null}
                 </div>
               ))}
-              {/* the graph — centrepiece */}
+            </div>
+
+            <div className="mt-2 flex justify-center">
+              <Arrow i={3.6} label="locks" down />
+            </div>
+
+            {/* ================= Tier 2 — THE VERIFIED GRAPH ================= */}
+            <div
+              className="ig-step ig-graph mt-2 rounded-2xl border-2 px-5 py-5 text-center"
+              style={{
+                ...step(4.2),
+                borderColor: "var(--iris)",
+                background: pastel("#6e5ccc", 14),
+                boxShadow: "0 4px 18px rgba(110,92,204,.25)",
+              }}
+            >
+              <div className="text-[24px] leading-none">🕸️</div>
+              <div className="mt-1 text-[17px] font-black leading-tight text-[var(--iris)] tracking-wide">
+                THE VERIFIED GRAPH
+              </div>
+              <div className="mt-0.5 text-[11px] text-[var(--text-soft)]">
+                typed · mechanically proven · the source of truth
+              </div>
+
+              <div className="mt-3.5 flex flex-wrap justify-center gap-1.5">
+                {NODE_CHIPS.map((c, i) => (
+                  <span
+                    key={c.label}
+                    className="ig-step inline-flex items-center gap-1 rounded-md border px-2 py-1 text-[10.5px] font-bold"
+                    style={{ ...step(4.7 + i * 0.12), borderColor: c.color, background: pastel(c.color), color: "var(--text)" }}
+                  >
+                    <span className="text-[12px] leading-none">{c.icon}</span>
+                    {c.label}
+                  </span>
+                ))}
+              </div>
+
               <div
-                className="ig-step ig-graph rounded-xl border-2 px-5 py-4 text-center sm:min-w-[210px]"
-                style={{
-                  ...step(4),
-                  borderColor: "var(--iris)",
-                  background: "color-mix(in srgb, #6e5ccc 14%, var(--panel-bg))",
-                  boxShadow: "0 4px 18px rgba(110,92,204,.25)",
-                }}
+                className="ig-step mx-auto mt-3.5 inline-block rounded-lg border border-[var(--border)] px-3 py-1.5 font-mono text-[11px] text-[var(--text-soft)]"
+                style={{ ...step(6), background: pastel("#6e5ccc", 5) }}
               >
-                <div className="text-[20px] leading-none">🕸️</div>
-                <div className="mt-1 text-[14.5px] font-black leading-tight text-[var(--iris)]">
-                  THE VERIFIED GRAPH
-                </div>
-                <div className="mt-0.5 text-[10.5px] text-[var(--text-soft)] leading-snug">
-                  typed · mechanically proven · the source of truth
-                </div>
-                <div className="mt-1.5 inline-block rounded-full border border-[var(--iris)] px-2 py-0.5 text-[9px] font-bold text-[var(--iris)] tracking-wide">
+                <span className="text-[var(--muted)]">walk the edges:&nbsp;</span>
+                request <span aria-hidden>➡️</span> endpoint <span aria-hidden>➡️</span> method{" "}
+                <span aria-hidden>➡️</span> query <span aria-hidden>➡️</span> column
+              </div>
+
+              <div className="ig-step mt-3 flex flex-wrap justify-center gap-1.5" style={step(6.3)}>
+                <span className="rounded-full border border-[var(--iris)] px-2.5 py-0.5 text-[9.5px] font-bold text-[var(--iris)] tracking-wide">
                   typed graphAPI
-                </div>
+                </span>
+                <span className="rounded-full border border-[var(--iris)] px-2.5 py-0.5 text-[9.5px] font-bold text-[var(--iris)] tracking-wide">
+                  golden snapshots · hard invariants
+                </span>
               </div>
             </div>
 
-            {/* fan-out row */}
-            <div className="mt-4 flex flex-col sm:flex-row items-center gap-2 sm:pl-[55%]">
-              <div className="ig-step shrink-0 text-[var(--muted)] text-[10.5px] flex sm:flex-col items-center gap-0.5" style={step(5.2)}>
-                <span className="text-[15px] leading-none">↓</span>
-                <span className="whitespace-nowrap">slices into pre-tested work units</span>
-              </div>
+            <div className="mt-2 flex justify-center">
+              <Arrow i={6.7} label="the graph slices into work units" down />
             </div>
-            <div className="mt-2.5 flex flex-col sm:flex-row items-center justify-center gap-2.5">
-              <div className="flex gap-2">
-                {[1, 2, 3].map((i) => (
+
+            {/* ============ Tier 3 — spec-driven development to shipped ============ */}
+            <div className="mt-2 flex flex-col sm:flex-row items-center justify-center gap-2.5">
+              <div
+                className="ig-step rounded-xl border border-dashed px-4 py-3 text-left sm:max-w-[240px]"
+                style={{ ...step(7.1), borderColor: "#fb923c", background: pastel("#fb923c", 8) }}
+              >
+                <div className="text-[10px] font-black tracking-widest text-[#fb923c] uppercase">Work unit</div>
+                <ul className="mt-1.5 space-y-1 text-[11.5px] text-[var(--text-soft)]">
+                  <li>📋 the spec</li>
+                  <li>✅ failing tests included</li>
+                  <li>🎯 narrow, precise context</li>
+                </ul>
+                <div className="mt-2 pt-2 border-t border-dashed border-[#fb923c] text-[9.5px] text-[var(--muted)] leading-snug">
+                  TDD by construction: every unit arrives with its spec and its tests
+                </div>
+              </div>
+
+              <Arrow i={7.5} label="picked up by" />
+
+              <div className="flex flex-col gap-1.5">
+                {ENGINEERS.map((e, i) => (
                   <div
-                    key={i}
-                    className="ig-step rounded-lg border px-3 py-2 text-center"
-                    style={{
-                      ...step(5.8 + i * 0.3),
-                      borderColor: "#10b981",
-                      background: "color-mix(in srgb, #10b981 10%, var(--panel-bg))",
-                    }}
+                    key={e.icon}
+                    className="ig-step flex items-center gap-2.5 rounded-xl border px-3 py-2"
+                    style={{ ...step(7.8 + i * 0.25), borderColor: "#10b981", background: pastel("#10b981") }}
                   >
-                    <div className="text-[14px] leading-none">⚙️</div>
-                    <div className="text-[11px] font-bold leading-tight">Engineer {i}</div>
+                    <span className="text-[20px] leading-none">{e.icon}</span>
+                    <div className="text-left">
+                      <div className="text-[11.5px] font-bold leading-tight">Engineer agent</div>
+                      <div className="text-[10px] text-[var(--muted)] leading-snug">{e.line}</div>
+                    </div>
                   </div>
                 ))}
-                <div className="ig-step self-center text-[12px] text-[var(--muted)] pl-1" style={step(7)}>
+                <div className="ig-step text-center text-[10.5px] font-medium text-[var(--muted)]" style={step(8.6)}>
                   ×N, in parallel
                 </div>
               </div>
-              <span className="ig-step text-[var(--muted)] text-[15px] leading-none rotate-90 sm:rotate-0" style={step(7.4)}>
-                →
-              </span>
+
+              <Arrow i={8.8} />
+
               <div
-                className="ig-step rounded-lg border px-4 py-2.5 text-center"
-                style={{
-                  ...step(7.8),
-                  borderColor: "#0d9488",
-                  background: "color-mix(in srgb, #0d9488 10%, var(--panel-bg))",
-                }}
+                className="ig-step rounded-xl border px-3.5 py-2.5 sm:max-w-[190px] text-left"
+                style={{ ...step(9), borderColor: "#d97706", background: pastel("#d97706", 8) }}
               >
-                <div className="text-[15px] leading-none">✅</div>
-                <div className="text-[12.5px] font-bold leading-tight">Working system</div>
-                <div className="text-[10.5px] text-[var(--muted)]">every unit arrives with its tests</div>
+                <div className="text-[16px] leading-none">↩️</div>
+                <div className="mt-1 text-[10.5px] text-[var(--text-soft)] leading-snug">
+                  results proven back against the graph — snapshots catch drift
+                </div>
+              </div>
+
+              <Arrow i={9.3} label="ships" />
+
+              <div
+                className="ig-step rounded-xl border px-4 py-3 text-center sm:max-w-[200px]"
+                style={{ ...step(9.6), borderColor: "#0d9488", background: pastel("#0d9488") }}
+              >
+                <div className="text-[20px] leading-none">✅</div>
+                <div className="mt-1 text-[13.5px] font-bold leading-tight">Working system</div>
+                <div className="mt-0.5 text-[10px] text-[var(--muted)] leading-snug">
+                  every requirement traced · every flow followed end to end
+                </div>
               </div>
             </div>
 
             <p
               className="ig-step mt-6 pt-4 border-t border-[var(--border)] text-center text-[12px] text-[var(--muted)]"
-              style={step(8.6)}
+              style={step(10.2)}
             >
               Humans steer at the level of <strong className="text-[var(--text-soft)]">intent and structure</strong> — approving
               the decisions that matter while the gate enforces the thousand that don&apos;t.
