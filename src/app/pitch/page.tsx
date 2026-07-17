@@ -220,35 +220,74 @@ export default function PitchPage() {
           <h2 className="text-[12px] font-bold tracking-[0.12em] uppercase text-[var(--muted)]">
             From the discussion
           </h2>
-          <figure className="mt-5 rounded-xl border border-[var(--border)] bg-[var(--panel-bg)] p-5">
-            <blockquote className="text-[14.5px] leading-relaxed text-[var(--text-soft)]">
-              &ldquo;Code is just the output; the architecture and intent are what actually
-              matter. Trying to review AI code at LLM speed is impossible. It&apos;s no different
-              than a compiled language — we don&apos;t read the raw assembly output, we verify the
-              source and run the tests. Treating AI-generated code as an ephemeral compilation
-              target while managing a mechanically verified model of the system instead is{" "}
-              <strong className="text-[var(--text)]">the future of engineering</strong>.&rdquo;
-            </blockquote>
-            <figcaption className="mt-3 text-[12.5px] text-[var(--muted)]">
-              — Christopher Langton, Founder @ Vulnetix, commenting on{" "}
-              <a href={ARTICLE_URL} className="text-[var(--iris)] hover:underline">
-                the launch article
-              </a>
-            </figcaption>
-          </figure>
-          <figure className="mt-3 rounded-xl border border-[var(--border)] bg-[var(--panel-bg)] p-5">
-            <blockquote className="text-[14.5px] leading-relaxed text-[var(--text-soft)]">
-              &ldquo;We acknowledged that driving coding agents manually day-to-day is
-              inefficient — it leads to errors, constant drift and forgetfulness on bigger
-              pieces of work. We don&apos;t want to put every aspect of engineering into markdown
-              files and drag massive context through the solution, burning tokens and diluting
-              the signal. Good solid architecture and precise, dynamic context generation is
-              the way to go.&rdquo;
-            </blockquote>
-            <figcaption className="mt-3 text-[12.5px] text-[var(--muted)]">
-              — Dmitry Kislov, Co-Founder &amp; CEO, Totally Wild AI
-            </figcaption>
-          </figure>
+          <p className="mt-3 text-[13px] text-[var(--muted)]">
+            Engineering leaders responding to{" "}
+            <a href={ARTICLE_URL} className="text-[var(--iris)] hover:underline">
+              the launch article
+            </a>{" "}
+            — converging on the same bet.
+          </p>
+          <div className="mt-4 grid sm:grid-cols-2 gap-3 items-start">
+            <figure className="rounded-xl border border-[var(--border)] bg-[var(--panel-bg)] p-5">
+              <blockquote className="text-[14px] leading-relaxed text-[var(--text-soft)]">
+                &ldquo;Code is just the output; the architecture and intent are what actually
+                matter. Trying to review AI code at LLM speed is impossible. It&apos;s no different
+                than a compiled language — we don&apos;t read the raw assembly output, we verify the
+                source and run the tests. Treating AI-generated code as an ephemeral compilation
+                target while managing a mechanically verified model of the system instead is{" "}
+                <strong className="text-[var(--text)]">the future of engineering</strong>.&rdquo;
+              </blockquote>
+              <figcaption className="mt-3 text-[12.5px] text-[var(--muted)]">
+                — Christopher Langton, Founder @ Vulnetix
+              </figcaption>
+            </figure>
+            <figure className="rounded-xl border border-[var(--border)] bg-[var(--panel-bg)] p-5">
+              <blockquote className="text-[14px] leading-relaxed text-[var(--text-soft)]">
+                &ldquo;I think this is where AI changes software engineering the most. The
+                bottleneck isn&apos;t generating code anymore — it&apos;s{" "}
+                <strong className="text-[var(--text)]">
+                  preserving architecture and intent as thousands of changes accumulate
+                </strong>
+                . Teams that can keep those aligned will move much faster over time.&rdquo;
+              </blockquote>
+              <figcaption className="mt-3 text-[12.5px] text-[var(--muted)]">
+                —{" "}
+                <a href="https://www.linkedin.com/in/tarand" className="text-[var(--iris)] hover:underline">
+                  Andrea Tarzariol
+                </a>
+                , Senior Engineering Manager · creator of TL;DW
+              </figcaption>
+            </figure>
+            <figure className="rounded-xl border border-[var(--border)] bg-[var(--panel-bg)] p-5">
+              <blockquote className="text-[14px] leading-relaxed text-[var(--text-soft)]">
+                &ldquo;Been making the same thing since March, but the implementation is
+                different… decouple the intent graph from the code graph and from the knowledge
+                graph. Then the problem still remains: how to understand changes quickly enough?
+                How to render only the slice of the graph that has useful context?{" "}
+                <strong className="text-[var(--text)]">What is minimal viable context?</strong>&rdquo;
+              </blockquote>
+              <figcaption className="mt-3 text-[12.5px] text-[var(--muted)]">
+                —{" "}
+                <a href="https://www.linkedin.com/in/konovalovnk" className="text-[var(--iris)] hover:underline">
+                  Nikolay Konovalov
+                </a>
+                , Senior Software Developer — independently building in the same space
+              </figcaption>
+            </figure>
+            <figure className="rounded-xl border border-[var(--border)] bg-[var(--panel-bg)] p-5">
+              <blockquote className="text-[14px] leading-relaxed text-[var(--text-soft)]">
+                &ldquo;We acknowledged that driving coding agents manually day-to-day is
+                inefficient — it leads to errors, constant drift and forgetfulness on bigger
+                pieces of work. We don&apos;t want to put every aspect of engineering into markdown
+                files and drag massive context through the solution, burning tokens and diluting
+                the signal. Good solid architecture and precise, dynamic context generation is
+                the way to go.&rdquo;
+              </blockquote>
+              <figcaption className="mt-3 text-[12.5px] text-[var(--muted)]">
+                — Dmitry Kislov, Co-Founder &amp; CEO, Totally Wild AI
+              </figcaption>
+            </figure>
+          </div>
         </section>
 
         {/* ------------------------------------------------------ closing */}
