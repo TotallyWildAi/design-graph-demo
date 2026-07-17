@@ -225,7 +225,7 @@ export default function PitchPage() {
             <a href={ARTICLE_URL} className="text-[var(--iris)] hover:underline">
               the launch article
             </a>{" "}
-            — converging on the same bet.
+            — converging, and pushing back, on the same bet.
           </p>
           <div className="mt-4 grid sm:grid-cols-2 gap-3 items-start">
             <figure className="rounded-xl border border-[var(--border)] bg-[var(--panel-bg)] p-5">
@@ -260,6 +260,24 @@ export default function PitchPage() {
             </figure>
             <figure className="rounded-xl border border-[var(--border)] bg-[var(--panel-bg)] p-5">
               <blockquote className="text-[14px] leading-relaxed text-[var(--text-soft)]">
+                &ldquo;Approaches like this are the future of software development. Moving the
+                software definition to a higher level that is more human-understandable than raw
+                code exploits AI agents&apos; ability to make changes with a big piece of
+                human-readable context that anchors the production and test code… While still
+                early days, it&apos;s been nothing short of revolutionary — it&apos;s allowed us to{" "}
+                <strong className="text-[var(--text)]">maintain dev speed <em>and</em> quality</strong>.&rdquo;
+              </blockquote>
+              <figcaption className="mt-3 text-[12.5px] text-[var(--muted)]">
+                —{" "}
+                <a href="https://www.linkedin.com/in/mark-abrahams-4b58b410" className="text-[var(--iris)] hover:underline">
+                  Mark Abrahams
+                </a>
+                , Principal Software Architect at FeeniX Communications — independently building
+                in the same space
+              </figcaption>
+            </figure>
+            <figure className="rounded-xl border border-[var(--border)] bg-[var(--panel-bg)] p-5">
+              <blockquote className="text-[14px] leading-relaxed text-[var(--text-soft)]">
                 &ldquo;Been making the same thing since March, but the implementation is
                 different… decouple the intent graph from the code graph and from the knowledge
                 graph. Then the problem still remains: how to understand changes quickly enough?
@@ -272,6 +290,24 @@ export default function PitchPage() {
                   Nikolay Konovalov
                 </a>
                 , Senior Software Developer — independently building in the same space
+              </figcaption>
+            </figure>
+            <figure className="rounded-xl border border-[var(--border)] bg-[var(--panel-bg)] p-5">
+              <blockquote className="text-[14px] leading-relaxed text-[var(--text-soft)]">
+                &ldquo;A verified graph can be a useful review surface, but{" "}
+                <strong className="text-[var(--text)]">
+                  I would hesitate to make it the universal source of truth
+                </strong>
+                . Architecture is one artifact in the project context — it has to stay consistent
+                with requirements, tests, operational constraints, and runtime evidence… My answer
+                to drift is a set of mutually checked artifacts available to the agent.&rdquo;
+              </blockquote>
+              <figcaption className="mt-3 text-[12.5px] text-[var(--muted)]">
+                —{" "}
+                <a href="https://www.linkedin.com/in/sergeyblekher" className="text-[var(--iris)] hover:underline">
+                  Sergey Blekher
+                </a>
+                , Independent Principal / Lead Software Engineer — the counterpoint
               </figcaption>
             </figure>
             <figure className="rounded-xl border border-[var(--border)] bg-[var(--panel-bg)] p-5">
