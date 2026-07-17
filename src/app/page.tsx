@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { DesignGraphApp } from "@/components/DesignGraphApp";
 
 export default function Home() {
-  redirect("/design-graph");
+  return <DesignGraphApp />;
 }

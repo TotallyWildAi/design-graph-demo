@@ -1,7 +1,6 @@
-import { DesignGraphApp } from "@/components/DesignGraphApp";
+import { redirect } from "next/navigation";
 
-export const metadata = { title: "Design Graph — Totally Wild AI" };
-
+// The app moved to the root path; old /design-graph links keep working.
 export default function DesignGraphPage() {
-  return <DesignGraphApp />;
+  redirect("/");
 }

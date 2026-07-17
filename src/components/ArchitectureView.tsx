@@ -56,6 +56,9 @@ function buildMermaid(data: DGData, idx: GraphIndex): string {
       n.kind !== "COLUMN" &&
       n.kind !== "DEPENDENCY" &&
       n.kind !== "REQUIREMENT" &&
+      // The SYSTEM is the whole diagram, not a box in it — its identity is
+      // promoted to the view title instead of floating as an orphan card.
+      n.kind !== "SYSTEM" &&
       !endpointHome.has(n.id) &&
       !isDto(n) &&
       !isTest(n),
@@ -145,7 +148,7 @@ function buildMermaid(data: DGData, idx: GraphIndex): string {
       const n = idx.byId.get(id);
       // Prune boxes with no connections at this altitude (vite.config.ts and
       // friends — their only edges are CONTAINS or point at hidden nodes).
-      const keepAlways = n?.kind === "SYSTEM" || n?.kind === "CONTRACT";
+      const keepAlways = n?.kind === "CONTRACT";
       if (!keepAlways && (degree.get(mmId(id)) ?? 0) === 0) continue;
       const sum = summaries.get(id);
       if (sum) {
@@ -184,13 +187,18 @@ function buildMermaid(data: DGData, idx: GraphIndex): string {
 
 export function ArchitectureView({ data, idx }: { data: DGData; idx: GraphIndex }) {
   const code = useMemo(() => buildMermaid(data, idx), [data, idx]);
+  const system = data.nodes.find((n) => n.kind === "SYSTEM");
   return (
     <div className="flex-1 min-w-0 flex flex-col bg-[var(--canvas-bg)]">
       <div className="px-6 pt-4 pb-2 text-[11px] text-[var(--muted)]">
-        <span className="font-semibold text-[var(--text)]">Whole solution</span> — the C4-style
-        architecture story: containers as lanes, components/contracts/endpoints/tables inside,
-        plain-English relationships. Parallel edges are collapsed (&times;N), dependencies rolled up,
-        tests hidden at this altitude. <span className="opacity-75">Scroll to zoom · drag to pan · double-click to zoom in.</span>
+        <span className="font-semibold text-[13px] text-[var(--text)]">
+          🏛️ {system?.name ?? "Whole solution"}
+        </span>
+        <span className="ml-1.5 text-[9px] font-bold tracking-widest uppercase text-[#8b5cf6]">system</span>
+        {" — "}the whole solution as a C4 story: containers as lanes,
+        components/contracts/endpoints/tables inside, plain-English relationships.
+        Parallel edges are collapsed (&times;N), dependencies rolled up, tests hidden at
+        this altitude. <span className="opacity-75">Scroll to zoom · drag to pan · double-click to zoom in.</span>
       </div>
       <DiagramPanZoom fitKey={code}>
         <Mermaid code={code} id={`arch-${data.projectId}`} />
