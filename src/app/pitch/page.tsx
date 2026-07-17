@@ -13,11 +13,11 @@ const ARTICLE_URL =
 const PROBLEMS = [
   {
     title: "Drift",
-    body: "As a model keeps coding, it quietly forgets what was true at the start. Systems grow, prompts drop details, and everyone loses the thread.",
+    body: "As a model keeps coding, it quietly forgets what was true at the start. Humans do it too — nobody holds a thousand interconnected pieces in their head at once.",
   },
   {
     title: "Code stops being the source of truth",
-    body: "Once a model has written thousands of lines no human can hold in their head, code is the output — not the intent. Ask “why is this here?” and it shrugs.",
+    body: "Once a model has written thousands of lines no human can read, review and hold in their head, code is the output — not the intent. Ask “why is this here?” and it shrugs: a human prompted it, or the model hallucinated it and moved on.",
   },
   {
     title: "Every edit is a silent bet",
@@ -25,7 +25,7 @@ const PROBLEMS = [
   },
   {
     title: "A losing race",
-    body: "Reviewing generated code at LLM speed with human eyes doesn’t scale — and never will.",
+    body: "Reviewing generated code at LLM speed with human eyes is a race you can’t win — so we babysit coding agents, re-explaining the same context on every task, because they have no source of truth to work from.",
   },
 ];
 
@@ -35,24 +35,28 @@ const UNLOCKS = [
     body: "The graph knows what every piece is for, what it depends on, and what it’s forbidden from doing.",
   },
   {
-    title: "Blast radius is a query, not a prayer",
-    body: "“What breaks if I touch this?” has an answer before you touch it.",
+    title: "The strongest signal, not the widest guess",
+    body: "Each agent works from narrow, precise context funneled through the graph — and answers questions by traversing the edges, not grepping code.",
   },
   {
     title: "Nothing dangles",
-    body: "Every requirement traces to the code that satisfies it; every data flow is followed end to end — request → endpoint → method → query → column — across every service boundary.",
+    body: "Every requirement traces to the code that satisfies it; every data flow is followed end to end — request → endpoint → method → query → column — across every service boundary through typed contracts. Coverage isn’t a hope; it’s an invariant.",
+  },
+  {
+    title: "Change becomes analyzable, not hopeful",
+    body: "The blast radius of a change is a query, not a prayer. “What breaks if I touch this?” has an answer before you touch it.",
   },
   {
     title: "Correctness is mechanical, not vibes",
-    body: "Tasks derive from the verified graph and arrive carrying their own tests. Golden snapshots catch regressions in the shape of the whole system.",
+    body: "Tasks derive from the verified graph and arrive carrying their own tests. Golden snapshots of the intended architecture catch regressions — like snapshot-testing a function, but for the shape of an entire system, across hundreds of reference designs.",
   },
   {
-    title: "Work decomposes deterministically",
-    body: "The verified graph slices into precise, independent, pre-tested units of work. Engineer agents run them in parallel; humans steer the decisions that matter.",
+    title: "The timeline collapses — without losing control",
+    body: "What makes a multi-service platform take years isn’t the typing — it’s coordination: aligning teams, holding contracts stable, keeping mental models in sync. Move that into a verified graph, slice it into precise pre-tested work units, and run Engineer agents in parallel: years into months, months into weeks, weeks into days.",
   },
   {
     title: "The human scales",
-    body: "Stop absorbing 10,000 lines a day. Drive a model you can hold in your head — approve the decisions that matter, let the machine enforce the thousand that don’t.",
+    body: "Stop absorbing 10,000 lines a day. Drive a model you can hold in your head — approving the decisions that matter (which stack, which plan) and letting the machine enforce the thousand that don’t.",
   },
 ];
 
@@ -103,10 +107,12 @@ export default function PitchPage() {
           </h1>
           <p className="mt-4 text-[16px] leading-relaxed text-[var(--text-soft)] max-w-xl">
             An LLM can generate thousands of lines before your coffee is cold.
-            That was never the hard part. The constraint has moved: it&apos;s
-            comprehension and control of a large, interconnected body of logic.
-            So we stopped managing AI-generated code — and built a platform
-            that manages a <strong className="text-[var(--text)]">verified model</strong> of it instead.
+            That was never the hard part. Speed of typing was never the ceiling —
+            comprehension and control of a large, interconnected body of logic is.
+            That&apos;s what decides whether an LLM-built system stays correct as it
+            grows, or quietly rots into something no one can reason about. So we
+            made a different bet: don&apos;t manage the code — manage a{" "}
+            <strong className="text-[var(--text)]">verified model</strong> of it.
           </p>
           <div className="mt-7 flex gap-3 flex-wrap">
             <Link
@@ -137,6 +143,9 @@ export default function PitchPage() {
               </div>
             ))}
           </div>
+          <p className="mt-4 text-[14px] text-[var(--muted)] italic">
+            TDD helps. It always has. But what else?
+          </p>
         </section>
 
         {/* ----------------------------------------------------- the graph */}
@@ -145,20 +154,30 @@ export default function PitchPage() {
             The Graph — and the graphAPI
           </h2>
           <p className="mt-4 text-[15px] leading-relaxed text-[var(--text-soft)] max-w-2xl">
-            Before a single file is written, an <strong className="text-[var(--text)]">Architect agent</strong> builds
-            a complete architecture graph — a typed, mechanically verified model of the whole
-            solution, resolved down to the smallest units of logic. Not a diagram you draw once
-            and forget: a living graph that is the source of truth, continuously proven against
-            hard invariants. A <strong className="text-[var(--text)]">BA agent</strong> captures the brief; a
-            verification gate locks the proposed graph with hard assertions; a pool of
-            <strong className="text-[var(--text)]"> Engineer agents</strong> builds against it in parallel —
-            every interaction through a typed graphAPI, so humans, agents and tools all ask the
-            same source of truth instead of parsing code.
+            Before a single file is written, the platform builds a complete architecture graph —
+            a typed, mechanically verified model of the whole solution, resolved all the way down
+            to the smallest units of logic. Not a diagram you draw once and forget: a living
+            graph that is the source of truth, continuously proven against hard invariants.
+          </p>
+          <p className="mt-3 text-[15px] leading-relaxed text-[var(--text-soft)] max-w-2xl">
+            It&apos;s one graph with multiple layers: a reusable{" "}
+            <strong className="text-[var(--text)]">knowledge layer</strong> that captures engineering
+            know-how, and an <strong className="text-[var(--text)]">instance layer</strong> — the concrete
+            system — derived by traversing and scoring that knowledge, then mechanically verified.{" "}
+            <em>Proposed and proven, not left to a guess.</em> Every interaction goes through a typed{" "}
+            <strong className="text-[var(--text)]">graphAPI</strong> — strongly-typed queries and
+            traversals over the live graph — so humans, agents and tools all ask the same source
+            of truth instead of parsing code.
           </p>
           <PitchInfographic />
           <div className="mt-6 grid sm:grid-cols-2 gap-3">
-            {UNLOCKS.map((u) => (
-              <div key={u.title} className="rounded-xl border border-[var(--border)] bg-[var(--panel-bg)] p-4">
+            {UNLOCKS.map((u, i) => (
+              <div
+                key={u.title}
+                className={`rounded-xl border border-[var(--border)] bg-[var(--panel-bg)] p-4 ${
+                  i === UNLOCKS.length - 1 ? "sm:col-span-2" : ""
+                }`}
+              >
                 <h3 className="text-[14px] font-bold text-[var(--iris)]">{u.title}</h3>
                 <p className="mt-1 text-[13px] leading-relaxed text-[var(--text-soft)]">{u.body}</p>
               </div>
@@ -230,9 +249,15 @@ export default function PitchPage() {
 
         {/* ------------------------------------------------------ closing */}
         <section className="py-12 border-t border-[var(--border)] text-center">
-          <p className="text-[18px] font-bold text-balance max-w-xl mx-auto">
+          <p className="text-[14px] italic text-[var(--muted)] max-w-xl mx-auto">
+            When an LLM writes most of your code, what&apos;s your source of truth:
+            the code, the docs, or someone&apos;s memory?
+          </p>
+          <p className="mt-4 text-[18px] font-bold text-balance max-w-xl mx-auto">
             The teams that win the next few years won&apos;t be the ones who generate the most
-            code — they&apos;ll be the ones who keep generated logic under control.
+            code — they&apos;ll be the ones who keep generated logic under control:
+            comprehensible, verifiable, safe to change, long after the human who prompted
+            it has moved on.
           </p>
           <Link
             href="/"
