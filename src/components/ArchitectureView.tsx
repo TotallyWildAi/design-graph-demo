@@ -103,40 +103,8 @@ function buildMermaid(data: DGData, idx: GraphIndex): string {
     else if (isDto(n)) rollUp(n, "dtos", "🔀", "wire DTOs");
   }
 
-  const lines: string[] = ["flowchart TB"];
-  const classLines: string[] = [];
-  const seenClass = new Set<string>();
-
-  for (const [key, lane] of lanes) {
-    lines.push(`  subgraph ${mmId("lane_" + key)}["${esc(lane.label)}"]`);
-    for (const id of lane.ids) {
-      if (id === key) continue; // the lane container itself is the subgraph
-      const sum = summaries.get(id);
-      if (sum) {
-        lines.push(`    ${mmId(id)}["${sum.icon} ${sum.count} ${sum.noun}<br/>${esc(sum.names.join(", "))}${sum.count > sum.names.length ? "…" : ""}"]`);
-        classLines.push(`  class ${mmId(id)} cdeps;`);
-        continue;
-      }
-      const n = idx.byId.get(id)!;
-      const ops = opCount.get(id);
-      const tag = ops
-        ? `contract · ${ops} operations`
-        : n.kind === "COMPONENT" || n.kind === "TYPE" ? (n.stereotype ?? n.kind) : n.kind.toLowerCase().replace(/_/g, " ");
-      const s = styleForNode(n.kind, n.stereotype);
-      lines.push(`    ${mmId(id)}["${s.icon} ${esc(n.name)}<br/>«${esc(tag)}»"]`);
-      const cls = "c" + s.color.slice(1);
-      if (!seenClass.has(cls)) {
-        seenClass.add(cls);
-        classLines.push(`  classDef ${cls} fill:${pastel(s.color, 0.12)},stroke:${s.color},color:#1e293b,stroke-width:1.3px,rx:6,ry:6;`);
-      }
-      classLines.push(`  class ${mmId(id)} ${cls};`);
-    }
-    lines.push("  end");
-    classLines.push(`  style ${mmId("lane_" + key)} fill:#f8f9fd,stroke:#dfe3ee,rx:10,ry:10;`);
-  }
-  classLines.push("  classDef cdeps fill:#f1f5f9,stroke:#94a3b8,color:#475569,stroke-dasharray:4 3,rx:6,ry:6;");
-
-  // Collapse parallel edges (same endpoints + phrase) into one labeled edge with a count.
+  // Edges FIRST (nodes are pruned by degree afterwards). Parallel edges with
+  // the same endpoints + phrase collapse into one labeled edge with a count.
   const mapEnd = (id: string): string | null => {
     if (rolledUp.has(id)) return mmId(rolledUp.get(id)!);
     if (endpointHome.has(id)) return mmId(endpointHome.get(id)!);
@@ -147,6 +115,10 @@ function buildMermaid(data: DGData, idx: GraphIndex): string {
   const collapsed = new Map<string, { src: string; dst: string; phrase: string; count: number }>();
   for (const e of data.edges) {
     if (e.kind === "CONTAINS") continue;
+    // Container-level HAS_CONTRACT would anchor on a lane CLUSTER — mermaid
+    // routes cluster edges badly (they render hanging), and the relationship
+    // is already told by the components' implements/exposes/consumes edges.
+    if (e.kind === "HAS_CONTRACT" && (lanes.has(e.src) || lanes.has(e.dst))) continue;
     const src = mapEnd(e.src);
     const dst = mapEnd(e.dst);
     if (!src || !dst || src === dst) continue;
@@ -156,6 +128,52 @@ function buildMermaid(data: DGData, idx: GraphIndex): string {
     if (cur) cur.count++;
     else collapsed.set(key, { src, dst, phrase, count: 1 });
   }
+  const degree = new Map<string, number>();
+  for (const e of collapsed.values()) {
+    degree.set(e.src, (degree.get(e.src) ?? 0) + 1);
+    degree.set(e.dst, (degree.get(e.dst) ?? 0) + 1);
+  }
+
+  const lines: string[] = ["flowchart TB"];
+  const classLines: string[] = [];
+  const seenClass = new Set<string>();
+
+  for (const [key, lane] of lanes) {
+    const laneLines: string[] = [];
+    for (const id of lane.ids) {
+      if (id === key) continue; // the lane container itself is the subgraph
+      const n = idx.byId.get(id);
+      // Prune boxes with no connections at this altitude (vite.config.ts and
+      // friends — their only edges are CONTAINS or point at hidden nodes).
+      const keepAlways = n?.kind === "SYSTEM" || n?.kind === "CONTRACT";
+      if (!keepAlways && (degree.get(mmId(id)) ?? 0) === 0) continue;
+      const sum = summaries.get(id);
+      if (sum) {
+        laneLines.push(`    ${mmId(id)}["${sum.icon} ${sum.count} ${sum.noun}<br/>${esc(sum.names.join(", "))}${sum.count > sum.names.length ? "…" : ""}"]`);
+        classLines.push(`  class ${mmId(id)} cdeps;`);
+        continue;
+      }
+      const ops = opCount.get(id);
+      const tag = ops
+        ? `contract · ${ops} operations`
+        : n!.kind === "COMPONENT" || n!.kind === "TYPE" ? (n!.stereotype ?? n!.kind) : n!.kind.toLowerCase().replace(/_/g, " ");
+      const s = styleForNode(n!.kind, n!.stereotype);
+      laneLines.push(`    ${mmId(id)}["${s.icon} ${esc(n!.name)}<br/>«${esc(tag)}»"]`);
+      const cls = "c" + s.color.slice(1);
+      if (!seenClass.has(cls)) {
+        seenClass.add(cls);
+        classLines.push(`  classDef ${cls} fill:${pastel(s.color, 0.12)},stroke:${s.color},color:#1e293b,stroke-width:1.3px,rx:6,ry:6;`);
+      }
+      classLines.push(`  class ${mmId(id)} ${cls};`);
+    }
+    // A lane may survive with zero boxes only if edges still target the
+    // cluster itself (packages / deploys to); otherwise skip the empty shell.
+    if (laneLines.length === 0 && (degree.get(mmId("lane_" + key)) ?? 0) === 0) continue;
+    lines.push(`  subgraph ${mmId("lane_" + key)}["${esc(lane.label)}"]`, ...laneLines, "  end");
+    classLines.push(`  style ${mmId("lane_" + key)} fill:#f8f9fd,stroke:#dfe3ee,rx:10,ry:10;`);
+  }
+  classLines.push("  classDef cdeps fill:#f1f5f9,stroke:#94a3b8,color:#475569,stroke-dasharray:4 3,rx:6,ry:6;");
+
   for (const e of collapsed.values()) {
     const label = e.count > 1 ? `${e.phrase} ×${e.count}` : e.phrase;
     lines.push(`  ${e.src} -- "${esc(label)}" --> ${e.dst}`);
